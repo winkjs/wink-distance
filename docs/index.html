@@ -1,0 +1,710 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>wink-distance 1.0.0 | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>wink-distance</h3>
+          <div class='mb1'><code>1.0.0</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#introduction'
+                  class="h5 bold black caps">
+                  Introduction
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#api'
+                  class="h5 bold black caps">
+                  API
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#bowcosine'
+                  class="">
+                  bow.cosine
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#numberhamming'
+                  class="">
+                  number.hamming
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#setjaccard'
+                  class="">
+                  set.jaccard
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#stringhammingnormalized'
+                  class="">
+                  string.hammingNormalized
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#stringhamming'
+                  class="">
+                  string.hamming
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#vectortaxicab'
+                  class="">
+                  vector.taxicab
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='introduction' class='mt0'>
+    Introduction
+  </h2>
+
+  
+    <h1>wink-distance</h1>
+<p>Distance functions for Bag of Words, Strings, Vectors and more.</p>
+<h3><a href="https://travis-ci.org/winkjs/wink-distance"><img src="https://api.travis-ci.org/winkjs/wink-distance.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/github/winkjs/wink-distance?branch=master"><img src="https://coveralls.io/repos/github/winkjs/wink-distance/badge.svg?branch=master" alt="Coverage Status"></a> <a href="http://inch-ci.org/github/winkjs/wink-distance"><img src="http://inch-ci.org/github/winkjs/wink-distance.svg?branch=master" alt="Inline docs"></a> <a href="https://david-dm.org/winkjs/wink-distance?type=dev"><img src="https://david-dm.org/winkjs/wink-distance/dev-status.svg" alt="devDependencies Status"></a></h3>
+<img align="right" src="https://decisively.github.io/wink-logos/logo-title.png" width="100px" >
+<p>Compute distances needed for NLP, de-duplication and clustering using <strong><code>wink-distance</code></strong>. It is a part of <em><a href="https://www.npmjs.com/~sanjaya">wink</a></em> — a growing family of high quality packages for Statistical Analysis, Natural Language Processing and Machine Learning in NodeJS.</p>
+<h3>Installation</h3>
+<p>Use <a href="https://www.npmjs.com/package/wink-distance">npm</a> to install:</p>
+<pre><code>npm install wink-distance --save
+</code></pre>
+<h3>Documentation</h3>
+<p>For detailed API docs, check out <a href="https://winkjs.github.io/wink-distance/">https://winkjs.github.io/wink-distance/</a> URL!</p>
+<h3>Need Help?</h3>
+<p>If you spot a bug and the same has not yet been reported, raise a new <a href="https://github.com/winkjs/wink-distance/issues">issue</a> or consider fixing it and sending a pull request.</p>
+<h3>Copyright &#x26; License</h3>
+<p><strong>wink-distance</strong> is copyright 2017 GRAYPE Systems Private Limited.</p>
+<p>It is licensed under the under the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, version 3 of the License.</p>
+
+  
+</section>
+</div>
+          
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='api' class='mt0'>
+    API
+  </h2>
+
+  
+    
+
+  
+</section>
+</div>
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='bowcosine'>
+      bow.cosine
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the cosine distance between the input bag of words (bow)
+<code>a</code> and <code>b</code> and returns a value between 0 and 1.</p>
+
+
+  <div class='pre p1 fill-light mt0'>bow.cosine</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>a</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    — the first set of bows i.e word (i.e. key) and it's frequency
+(i.e. value) pairs.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>b</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>)</code>
+	    — the second set of bows.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        cosine distance between 
+<code>a</code>
+ and 
+<code>b</code>
+.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='numberhamming'>
+      number.hamming
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the the hamming distance between two numbers; each number is
+assumed to be decimal representation of a binary number.</p>
+
+
+  <div class='pre p1 fill-light mt0'>number.hamming</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>na</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    — the first number.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>nb</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    — the second number.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        — hamming distance between 
+<code>na</code>
+ and 
+<code>nb</code>
+.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>hamming( <span class="hljs-number">8</span>, <span class="hljs-number">8</span> );
+<span class="hljs-comment">// -&gt; 0</span>
+hamming( <span class="hljs-number">8</span>, <span class="hljs-number">15</span> );
+<span class="hljs-comment">// -&gt; 3</span>
+hamming( <span class="hljs-number">9</span>, <span class="hljs-number">15</span> );
+<span class="hljs-comment">// -&gt; 2</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='setjaccard'>
+      set.jaccard
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the Jaccard distance between input sets <code>sa</code> and <code>sb</code>.
+This distance is always between 0 and 1.</p>
+
+
+  <div class='pre p1 fill-light mt0'>set.jaccard</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>sa</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">set</a>)</code>
+	    — the first set.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>sb</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">set</a>)</code>
+	    — the second set.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        — the Jaccard distance between 
+<code>sa</code>
+ and 
+<code>sb</code>
+.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='stringhammingnormalized'>
+      string.hammingNormalized
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the normalized hamming distance between two strings. These strings
+may be of different lengths. Normalized distance is always between 0 and 1.</p>
+
+
+  <div class='pre p1 fill-light mt0'>string.hammingNormalized</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    — first string.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str2</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    — second string.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        normalized hamming distance between 
+<code>str1</code>
+ and 
+<code>str2</code>
+.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>hammingNormalized( <span class="hljs-string">'john'</span>, <span class="hljs-string">'johny'</span> );
+<span class="hljs-comment">// -&gt;  0.2</span>
+hammingNormalized( <span class="hljs-string">'sam'</span>, <span class="hljs-string">'sam'</span> );
+<span class="hljs-comment">// -&gt; 0</span>
+hammingNormalized( <span class="hljs-string">'sam'</span>, <span class="hljs-string">'samuel'</span> );
+<span class="hljs-comment">// -&gt; 0.5</span>
+hammingNormalized( <span class="hljs-string">'saturn'</span>, <span class="hljs-string">'urn'</span> );
+<span class="hljs-comment">// -&gt; 1</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='stringhamming'>
+      string.hamming
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the hamming distance between two strings of identical length.
+This distance is always <code>>= 0</code>.</p>
+
+
+  <div class='pre p1 fill-light mt0'>string.hamming</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    — first string.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str2</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    — second string.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        hamming distance between 
+<code>str1</code>
+ and 
+<code>str2</code>
+.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>hamming( <span class="hljs-string">'john'</span>, <span class="hljs-string">'john'</span> );
+<span class="hljs-comment">// -&gt;  0</span>
+hamming( <span class="hljs-string">'sam'</span>, <span class="hljs-string">'sat'</span> );
+<span class="hljs-comment">// -&gt; 1</span>
+hamming( <span class="hljs-string">'summer'</span>, <span class="hljs-string">'samuel'</span> );
+<span class="hljs-comment">// -&gt; 3</span>
+hamming( <span class="hljs-string">'saturn'</span>, <span class="hljs-string">'urn'</span> );
+<span class="hljs-comment">// -&gt; throws error</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='vectortaxicab'>
+      vector.taxicab
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the taxicab or manhattan distance between two vectors of identical
+length.</p>
+
+
+  <div class='pre p1 fill-light mt0'>vector.taxicab</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>va</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    — the first vector.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>vb</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    — the second vector.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        — taxicab distance between 
+<code>va</code>
+ and 
+<code>vb</code>
+.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>taxicab( [ <span class="hljs-number">0</span>, <span class="hljs-number">0</span> ], [ <span class="hljs-number">6</span>, <span class="hljs-number">6</span> ] );
+<span class="hljs-comment">// -&gt; 12</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>

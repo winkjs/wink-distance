@@ -56,8 +56,6 @@ var hamming = function ( str1, str2 ) {
   if ( s1Length !== s2Length ) {
     throw Error( 'wink-distance: hamming requires identical length input strings.' );
   }
-  // May have to swap `s1`/`s2`.
-  if ( s1Length < s2Length ) s1 = [ s2, s2 = s1 ][ 0 ];
 
   // Compute distance.
   for ( var i = 0; i < s1Length; i += 1 ) {

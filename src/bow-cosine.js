@@ -40,7 +40,14 @@
  * @return {number} - cosine distance between `a` and `b`.
  *
  * @example
- *
+ * // bow for "the dog chased the cat"
+ * var a = { the: 2, dog: 1, chased: 1, cat: 1 };
+ * // bow  for "the cat chased the mouse"
+ * var b = { the: 2, cat: 1, chased: 1, mouse: 1 };
+ * cosine( a, b );
+ * // -> 0.14285714285714302
+ * // Note the bow could have been created directly by
+ * // using "tokens.bow()" from the "wink-nlp-utils".
  */
 var cosine = function ( a, b ) {
   // `ab` & `ba` additional variables are required as you dont want to corrupt

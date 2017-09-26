@@ -232,6 +232,19 @@ Software Foundation, version 3 of the License.</p>
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// bow for "the dog chased the cat"</span>
+<span class="hljs-keyword">var</span> a = { <span class="hljs-attr">the</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">dog</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">chased</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">cat</span>: <span class="hljs-number">1</span> };
+<span class="hljs-comment">// bow  for "the cat chased the mouse"</span>
+<span class="hljs-keyword">var</span> b = { <span class="hljs-attr">the</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">cat</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">chased</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">mouse</span>: <span class="hljs-number">1</span> };
+cosine( a, b );
+<span class="hljs-comment">// -&gt; 0.14285714285714302</span>
+<span class="hljs-comment">// Note the bow could have been created directly by</span>
+<span class="hljs-comment">// using "tokens.bow()" from the "wink-nlp-utils".</span></pre>
+    
+  
 
   
 

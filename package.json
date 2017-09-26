@@ -12,7 +12,7 @@
     "Cosine",
     "Jaro",
     "Hamming",
-    "Taxicab"
+    "Taxicab",
     "wink"
   ],
   "main": "src/wink-distance.js",

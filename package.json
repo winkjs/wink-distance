@@ -1,6 +1,6 @@
 {
   "name": "wink-distance",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Distance functions for Bag of Words, Strings, Numbers, Dates and Vectors.",
   "keywords": [
     "Distance",
@@ -9,10 +9,10 @@
     "Bag of Words",
     "Strings",
     "Vectors",
-    "Dates",
     "Cosine",
     "Jaro",
     "Hamming",
+    "Taxicab"
     "wink"
   ],
   "main": "src/wink-distance.js",

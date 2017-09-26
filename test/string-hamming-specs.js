@@ -51,28 +51,8 @@ describe( 'string-hamming error behaviour', function () {
   ];
 
   tests.forEach( function ( test ) {
-    it( 'should return ' + JSON.stringify( test.expectedOutputIs ) + ' if the input is ' + JSON.stringify( test.whenInputIs ), function () {
+    it( 'should ' + JSON.stringify( test.expectedOutputIs ) + ' if the input is ' + JSON.stringify( test.whenInputIs ), function () {
       expect( hamming.bind( null, test.whenInputIs.str1, test.whenInputIs.str2 ) ).to.throw( 'wink-distance: hamming requires identical length input strings.' );
     } );
   } );
 } );
-//
-//
-// describe( 'string-hamming normal behaviour', function () {
-//   var data1 = [ 6, 90, -1, 22, -12, 0, 10 ];
-//   var data2 = [ { x: 3 }, { x: 6 } ];
-//
-//   it( 'should return maximum 90 respectively with data1', function () {
-//     expect( max( data1 ) ).to.equal( 90 );
-//     expect( max( data2, 'x' ) ).to.equal( 6 );
-//     expect( max( data2, ( e ) =>  e.x ) ).to.equal( 6 );
-//   } );
-// } );
-//
-// describe( 'stats-max error behaviour', function () {
-//   it( 'should throw error with wrong data-type or empty array', function () {
-//     expect( () => max( 3 ) ).to.throw( 'stats-max: x should be an array of length > 0, instead found' );
-//     expect( () => max( [] ) ).to.throw( 'stats-max: x should be an array of length > 0, instead found' );
-//     expect( () => max( [ { x: 3 } ], {} ) ).to.throw( 'accessor: expecting undefined, string, number, or function, instead found: object' );
-//   } );
-// } );

@@ -24,7 +24,7 @@
 //
 var chai = require( 'chai' );
 var mocha = require( 'mocha' );
-var jaccard = require( '../src/set-jaccard.js' );
+var jaccard = require( '../src/wink-distance.js' ).set.jaccard;
 
 var expect = chai.expect;
 var describe = mocha.describe;

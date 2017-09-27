@@ -24,7 +24,7 @@
 //
 var chai = require( 'chai' );
 var mocha = require( 'mocha' );
-var jaro = require( '../src/string-jaro.js' );
+var jaro = require( '../src/wink-distance.js' ).string.jaro;
 
 var expect = chai.expect;
 var describe = mocha.describe;

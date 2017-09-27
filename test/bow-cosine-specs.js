@@ -24,7 +24,7 @@
 //
 var chai = require( 'chai' );
 var mocha = require( 'mocha' );
-var cosine = require( '../src/bow-cosine.js' );
+var cosine = require( '../src/wink-distance.js' ).bow.cosine;
 
 var expect = chai.expect;
 var describe = mocha.describe;

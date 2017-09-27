@@ -24,7 +24,7 @@
 //
 var chai = require( 'chai' );
 var mocha = require( 'mocha' );
-var hammingNormalized = require( '../src/string-hamming-normalized.js' );
+var hammingNormalized = require( '../src/wink-distance.js' ).string.hammingNormalized;
 
 var expect = chai.expect;
 var describe = mocha.describe;

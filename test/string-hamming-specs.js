@@ -24,7 +24,7 @@
 //
 var chai = require( 'chai' );
 var mocha = require( 'mocha' );
-var hamming = require( '../src/string-hamming.js' );
+var hamming = require( '../src/wink-distance.js' ).string.hamming;
 
 var expect = chai.expect;
 var describe = mocha.describe;

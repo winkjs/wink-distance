@@ -54,8 +54,12 @@ var jaccard = function ( sa, sb ) {
       if ( sa.has( element ) ) intersectSize += 1;
     } );
   }
-  // Compute Jaccard similarity.
-  distance = 1 - ( intersectSize / ( sa.size + sb.size - intersectSize ) );
+  // Compute Jaccard similarity while taking care of case when dividend is 0!
+  distance = (
+              ( sa.size || sb.size ) ?
+                1 - ( intersectSize / ( sa.size + sb.size - intersectSize ) ) :
+                0
+             );
   return distance;
 }; // jaccard()
 

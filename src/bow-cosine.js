@@ -86,7 +86,13 @@ var cosine = function ( a, b ) {
   }
   // Compute cosine distance; ensure you dont get `NaN i.e. 0/0` by testing for
   // `sa2` and `sb2`.
-  distance = 1 - ( ( sa2 && sb2 ) ? ( saxb / ( Math.sqrt( sa2 ) * Math.sqrt( sb2 ) ) ) : 0 );
+  distance = 1 - (
+    ( sa2 && sb2 ) ?
+      // Compute cosine if both of them are non-zero.
+      ( saxb / ( Math.sqrt( sa2 ) * Math.sqrt( sb2 ) ) ) :
+      // If one of them is 0 means **0 distance** otherwise a distance of **1**.
+      ( !sa2 ^ !sb2 ) ? 0 : 1 // eslint-disable-line no-bitwise
+  );
   return distance;
 }; // cosine()
 

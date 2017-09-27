@@ -95,6 +95,16 @@
               
                 
                 <li><a
+                  href='#stringjaro'
+                  class="">
+                  string.jaro
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#vectortaxicab'
                   class="">
                   vector.taxicab
@@ -612,6 +622,100 @@ hamming( <span class="hljs-string">'summer'</span>, <span class="hljs-string">'s
 <span class="hljs-comment">// -&gt; 3</span>
 hamming( <span class="hljs-string">'saturn'</span>, <span class="hljs-string">'urn'</span> );
 <span class="hljs-comment">// -&gt; throws error</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='stringjaro'>
+      string.jaro
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the jaro distance between two strings. This distance is always
+between 0 and 1.</p>
+
+
+  <div class='pre p1 fill-light mt0'>string.jaro</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    — first string.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str2</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    — second string.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        jaro distance between 
+<code>str1</code>
+ and 
+<code>str2</code>
+.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>jaro( <span class="hljs-string">'father'</span>, <span class="hljs-string">'farther'</span> );
+<span class="hljs-comment">// -&gt;  0.04761904761904756</span>
+jaro( <span class="hljs-string">'abcdef'</span>, <span class="hljs-string">'fedcba'</span> );
+<span class="hljs-comment">// -&gt; 0.6111111111111112</span>
+jaro( <span class="hljs-string">'sat'</span>, <span class="hljs-string">'urn'</span> );
+<span class="hljs-comment">// -&gt; 1</span></pre>
     
   
 

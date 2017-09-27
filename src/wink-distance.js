@@ -52,6 +52,8 @@ wd.set.jaccard = require( './set-jaccard.js' );
 wd.string.hamming = require( './string-hamming.js' );
 // 2. hammingNormalized
 wd.string.hammingNormalized = require( './string-hamming-normalized.js' );
+// 3. jaro
+wd.string.jaro = require( './string-jaro' );
 
 // Vector name space.
 // 1. taxicab

@@ -75,7 +75,7 @@ var hammingNormalized = function ( str1, str2 ) {
     if ( s1[ i ] !== s2[ i ] ) distance += 1;
   }
   // Normalize the distance & return.
-  return ( distance / dividend );
+  return ( dividend ) ? ( distance / dividend ) : 0;
 }; // hammingNormalized()
 
 module.exports = hammingNormalized;

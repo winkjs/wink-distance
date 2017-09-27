@@ -33,10 +33,10 @@ var it = mocha.it;
 describe( 'set-jaccard normal behaviour', function () {
   var tests = [
     // Some similarity.
-    { whenInputIs: { a: [ ':', '-', ')' ], b: [ ':', '-', '|' ] }, expectedOutputIs: 0.5 },
+    { whenInputIs: { a: ':-)', b: ':-(' }, expectedOutputIs: 0.5 },
     { whenInputIs: { a: [ 0, 1, 2, 5, 6 ], b: [ 0, 2, 3, 4, 5, 7, 9 ] }, expectedOutputIs: 0.6667 },
     // Identical.
-    { whenInputIs: { a: [ ':', '-', ')' ], b: [ ':', '-', ')' ] }, expectedOutputIs: 0 },
+    { whenInputIs: { a: ':-)', b: ':-)' }, expectedOutputIs: 0 },
     // No similarity.
     { whenInputIs: { a: [ 1, 2, 3, 4 ], b: [ 9, 8, 7, 6 ] }, expectedOutputIs: 1 },
     // One of them is empty.

@@ -40,6 +40,12 @@
  * @return {number} — the Jaccard distance between `sa` and `sb`.
  *
  * @example
+ * // Set for :-)
+ * var sa = new Set( ':-)' );
+ * // Set for :-(
+ * var sb = new Set( ':-(' );
+ * jaccard( sa, sb );
+ * // -> 0.5
  */
 var jaccard = function ( sa, sb ) {
   var intersectSize = 0;

@@ -41,7 +41,7 @@ describe( 'string-jaro normal behaviour', function () {
 
   tests.forEach( function ( test ) {
     it( 'should return ' + JSON.stringify( test.expectedOutputIs ) + ' if the input is ' + JSON.stringify( test.whenInputIs ), function () {
-      expect( +jaro( test.whenInputIs.str1, test.whenInputIs.str2 ).toFixed( 4 ) ).to.deep.equal( test.expectedOutputIs );
+      expect( +jaro( test.whenInputIs.str1, test.whenInputIs.str2 ).toFixed( 4 ) ).to.equal( test.expectedOutputIs );
     } );
   } );
 } );

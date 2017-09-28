@@ -105,6 +105,16 @@
               
                 
                 <li><a
+                  href='#vectorchebyshev'
+                  class="">
+                  vector.chebyshev
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#vectortaxicab'
                   class="">
                   vector.taxicab
@@ -727,6 +737,96 @@ jaro( <span class="hljs-string">'abcdef'</span>, <span class="hljs-string">'fedc
 <span class="hljs-comment">// -&gt; 0.6111111111111112</span>
 jaro( <span class="hljs-string">'sat'</span>, <span class="hljs-string">'urn'</span> );
 <span class="hljs-comment">// -&gt; 1</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='vectorchebyshev'>
+      vector.chebyshev
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the chebyshev or manhattan distance between two vectors of identical
+length.</p>
+
+
+  <div class='pre p1 fill-light mt0'>vector.chebyshev</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>va</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    — the first vector.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>vb</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    — the second vector.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        — chebyshev distance between 
+<code>va</code>
+ and 
+<code>vb</code>
+.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>chebyshev( [ <span class="hljs-number">0</span>, <span class="hljs-number">0</span> ], [ <span class="hljs-number">6</span>, <span class="hljs-number">6</span> ] );
+<span class="hljs-comment">// -&gt; 6</span></pre>
     
   
 

@@ -60,6 +60,8 @@ wd.string.jaro = require( './string-jaro' );
 wd.vector.taxicab = require( './vector-taxicab.js' );
 // Create an alias.
 wd.vector.manhattan = require( './vector-taxicab.js' );
+// 2. chebyshev
+wd.vector.chebyshev = require( './vector-chebyshev.js' );
 
 
 module.exports = wd;

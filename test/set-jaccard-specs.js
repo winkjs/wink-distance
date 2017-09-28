@@ -49,7 +49,7 @@ describe( 'set-jaccard normal behaviour', function () {
 
   tests.forEach( function ( test ) {
     it( 'should return ' + JSON.stringify( test.expectedOutputIs ) + ' if the input is ' + JSON.stringify( test.whenInputIs ), function () {
-      expect( +jaccard( new Set( test.whenInputIs.a ), new Set( test.whenInputIs.b ) ).toFixed( 4 ) ).to.deep.equal( test.expectedOutputIs );
+      expect( +jaccard( new Set( test.whenInputIs.a ), new Set( test.whenInputIs.b ) ).toFixed( 4 ) ).to.equal( test.expectedOutputIs );
     } );
   } );
 } );

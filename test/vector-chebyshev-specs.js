@@ -24,31 +24,31 @@
 //
 var chai = require( 'chai' );
 var mocha = require( 'mocha' );
-var taxicab = require( '../src/wink-distance.js' ).vector.taxicab;
+var chebyshev = require( '../src/wink-distance.js' ).vector.chebyshev;
 
 var expect = chai.expect;
 var describe = mocha.describe;
 var it = mocha.it;
 
-describe( 'vector-taxicab normal behaviour', function () {
+describe( 'vector-chebyshev normal behaviour', function () {
   var tests = [
     // Vectors.
-    { whenInputIs: { a: [ 0, 0 ], b: [ 6, 6 ] }, expectedOutputIs: 12 },
-    { whenInputIs: { a: [ 1.1, 2.2 ], b: [ 6.2, 6.3 ] }, expectedOutputIs: 9.2 },
+    { whenInputIs: { a: [ 0, 0 ], b: [ 6, 6 ] }, expectedOutputIs: 6 },
+    { whenInputIs: { a: [ 1.1, 2.2 ], b: [ 6.2, 6.3 ] }, expectedOutputIs: 5.1 },
     { whenInputIs: { a: [ 1, 1, 1 ], b: [ 1, 1, 1 ] }, expectedOutputIs: 0 },
-    { whenInputIs: { a: [ 6.1, 9.1, 3.1 ], b: [ 8.3, 9.8, 4.4 ] }, expectedOutputIs: 4.2 },
+    { whenInputIs: { a: [ 6.1, 9.1, 3.1 ], b: [ 8.3, 9.8, 4.4 ] }, expectedOutputIs: 2.2 },
     // Both are empty!
     { whenInputIs: { a: [ ], b: [ ] }, expectedOutputIs: 0 },
   ];
 
   tests.forEach( function ( test ) {
     it( 'should return ' + JSON.stringify( test.expectedOutputIs ) + ' if the input is ' + JSON.stringify( test.whenInputIs ), function () {
-      expect( +taxicab( test.whenInputIs.a, test.whenInputIs.b ).toFixed( 4 ) ).to.equal( test.expectedOutputIs );
+      expect( +chebyshev( test.whenInputIs.a, test.whenInputIs.b ).toFixed( 4 ) ).to.equal( test.expectedOutputIs );
     } );
   } );
 } );
 
-describe( 'vector-taxicab error behaviour', function () {
+describe( 'vector-chebyshev error behaviour', function () {
   var tests = [
     { whenInputIs: { a: [ 0, 0 ], b: [ 6, 6, 1 ] }, expectedOutputIs: 'throw error' },
     { whenInputIs: { a: [ 0, 0, 1 ], b: [ 6, 6 ] }, expectedOutputIs: 'throw error' },
@@ -56,7 +56,7 @@ describe( 'vector-taxicab error behaviour', function () {
 
   tests.forEach( function ( test ) {
     it( 'should ' + JSON.stringify( test.expectedOutputIs ) + ' if the input is ' + JSON.stringify( test.whenInputIs ), function () {
-      expect( taxicab.bind( null, test.whenInputIs.a, test.whenInputIs.b ) ).to.throw( 'wink-distance: taxicab requires identical lenght input vectors.' );
+      expect( chebyshev.bind( null, test.whenInputIs.a, test.whenInputIs.b ) ).to.throw( 'wink-distance: chebyshev requires identical lenght input vectors.' );
     } );
   } );
 } );

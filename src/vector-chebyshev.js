@@ -21,25 +21,36 @@
 //     General Public License along with “wink-distance”.
 //     If not, see <http://www.gnu.org/licenses/>.
 
-//
-var chai = require( 'chai' );
-var mocha = require( 'mocha' );
-var hamming = require( '../src/wink-distance.js' ).number.hamming;
+/* eslint-disable no-bitwise */
 
-var expect = chai.expect;
-var describe = mocha.describe;
-var it = mocha.it;
+// ## vector
 
-describe( 'string-hamming normal behaviour', function () {
-  var tests = [
-    { whenInputIs: { na: 8, nb: 8 }, expectedOutputIs: 0 },
-    { whenInputIs: { na: 8, nb: 15 }, expectedOutputIs: 3 },
-    { whenInputIs: { na: 9, nb: 15 }, expectedOutputIs: 2 }
-  ];
+// ### chebyshev
+/**
+ *
+ * Computes the chebyshev or manhattan distance between two vectors of identical
+ * length.
+ *
+ * @name vector.chebyshev
+ * @param {number} va — the first vector.
+ * @param {number} vb — the second vector.
+ * @return {number} — chebyshev distance between `va` and `vb`.
+ *
+ * @example
+ * chebyshev( [ 0, 0 ], [ 6, 6 ] );
+ * // -> 6
+ */
+var chebyshev = function ( va, vb ) {
+  var imax;
+  if ( (imax = va.length) !== vb.length ) {
+    throw Error( 'wink-distance: chebyshev requires identical lenght input vectors.' );
+  }
+  // Initialize chebyshev distance.
+  var distance = 0;
+  // Compute chebyshev distance.
+  for ( var i = 0; i < imax; i += 1 ) distance = Math.max( Math.abs( va[ i ] - vb[ i ] ), distance );
 
-  tests.forEach( function ( test ) {
-    it( 'should return ' + JSON.stringify( test.expectedOutputIs ) + ' if the input is ' + JSON.stringify( test.whenInputIs ), function () {
-      expect( hamming( test.whenInputIs.na, test.whenInputIs.nb ) ).to.equal( test.expectedOutputIs );
-    } );
-  } );
-} );
+  return distance;
+}; // chebyshev()
+
+module.exports = chebyshev;

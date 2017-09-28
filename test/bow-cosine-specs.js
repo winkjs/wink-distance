@@ -49,7 +49,7 @@ describe( 'bow-cosine normal behaviour', function () {
 
   tests.forEach( function ( test ) {
     it( 'should return ' + JSON.stringify( test.expectedOutputIs ) + ' if the input is ' + JSON.stringify( test.whenInputIs ), function () {
-      expect( +cosine( test.whenInputIs.a, test.whenInputIs.b ).toFixed( 4 ) ).to.deep.equal( test.expectedOutputIs );
+      expect( +cosine( test.whenInputIs.a, test.whenInputIs.b ).toFixed( 4 ) ).to.equal( test.expectedOutputIs );
     } );
   } );
 } );

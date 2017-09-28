@@ -39,7 +39,7 @@ describe( 'string-hamming normal behaviour', function () {
 
   tests.forEach( function ( test ) {
     it( 'should return ' + JSON.stringify( test.expectedOutputIs ) + ' if the input is ' + JSON.stringify( test.whenInputIs ), function () {
-      expect( hamming( test.whenInputIs.str1, test.whenInputIs.str2 ) ).to.deep.equal( test.expectedOutputIs );
+      expect( hamming( test.whenInputIs.str1, test.whenInputIs.str2 ) ).to.equal( test.expectedOutputIs );
     } );
   } );
 } );

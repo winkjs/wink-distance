@@ -35,9 +35,9 @@
               
                 
                 <li><a
-                  href='#api'
+                  href='#bow'
                   class="h5 bold black caps">
-                  API
+                  bow
                   
                 </a>
                 
@@ -55,9 +55,29 @@
               
                 
                 <li><a
+                  href='#number'
+                  class="h5 bold black caps">
+                  number
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#numberhamming'
                   class="">
                   number.hamming
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#set'
+                  class="h5 bold black caps">
+                  set
                   
                 </a>
                 
@@ -75,9 +95,9 @@
               
                 
                 <li><a
-                  href='#stringhammingnormalized'
-                  class="">
-                  string.hammingNormalized
+                  href='#string'
+                  class="h5 bold black caps">
+                  string
                   
                 </a>
                 
@@ -95,9 +115,29 @@
               
                 
                 <li><a
+                  href='#stringhammingnormalized'
+                  class="">
+                  string.hammingNormalized
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#stringjaro'
                   class="">
                   string.jaro
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#vector'
+                  class="h5 bold black caps">
+                  vector
                   
                 </a>
                 
@@ -166,8 +206,8 @@ Software Foundation, version 3 of the License.</p>
           
             <div class='keyline-top-not py2'><section class='py2 clearfix'>
 
-  <h2 id='api' class='mt0'>
-    API
+  <h2 id='bow' class='mt0'>
+    bow
   </h2>
 
   
@@ -238,7 +278,7 @@ Software Foundation, version 3 of the License.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+      <code><a href="#number">number</a></code>:
         cosine distance between 
 <code>a</code>
  and 
@@ -276,6 +316,21 @@ cosine( a, b );
           
         
           
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='number' class='mt0'>
+    number
+  </h2>
+
+  
+    
+
+  
+</section>
+</div>
+          
+        
+          
             <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -310,7 +365,7 @@ assumed to be decimal representation of a binary number.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>na</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>na</span> <code class='quiet'>(<a href="#number">number</a>)</code>
 	    — the first number.
 
           </div>
@@ -319,7 +374,7 @@ assumed to be decimal representation of a binary number.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>nb</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>nb</span> <code class='quiet'>(<a href="#number">number</a>)</code>
 	    — the second number.
 
           </div>
@@ -334,7 +389,7 @@ assumed to be decimal representation of a binary number.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+      <code><a href="#number">number</a></code>:
         — hamming distance between 
 <code>na</code>
  and 
@@ -367,6 +422,21 @@ hamming( <span class="hljs-number">9</span>, <span class="hljs-number">15</span>
   
 </section>
 
+          
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='set' class='mt0'>
+    set
+  </h2>
+
+  
+    
+
+  
+</section>
+</div>
           
         
           
@@ -404,7 +474,7 @@ This distance is always between 0 and 1.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>sa</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">set</a>)</code>
+            <span class='code bold'>sa</span> <code class='quiet'>(<a href="#set">set</a>)</code>
 	    — the first set.
 
           </div>
@@ -413,7 +483,7 @@ This distance is always between 0 and 1.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>sb</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">set</a>)</code>
+            <span class='code bold'>sb</span> <code class='quiet'>(<a href="#set">set</a>)</code>
 	    — the second set.
 
           </div>
@@ -428,7 +498,7 @@ This distance is always between 0 and 1.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+      <code><a href="#number">number</a></code>:
         — the Jaccard distance between 
 <code>sa</code>
  and 
@@ -451,6 +521,117 @@ This distance is always between 0 and 1.</p>
 <span class="hljs-keyword">var</span> sb = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>( <span class="hljs-string">':-('</span> );
 jaccard( sa, sb );
 <span class="hljs-comment">// -&gt; 0.5</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='string' class='mt0'>
+    string
+  </h2>
+
+  
+    
+
+  
+</section>
+</div>
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='stringhamming'>
+      string.hamming
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the hamming distance between two strings of identical length.
+This distance is always <code>>= 0</code>.</p>
+
+
+  <div class='pre p1 fill-light mt0'>string.hamming</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str1</span> <code class='quiet'>(<a href="#string">string</a>)</code>
+	    — first string.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str2</span> <code class='quiet'>(<a href="#string">string</a>)</code>
+	    — second string.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#number">number</a></code>:
+        hamming distance between 
+<code>str1</code>
+ and 
+<code>str2</code>
+.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>hamming( <span class="hljs-string">'john'</span>, <span class="hljs-string">'john'</span> );
+<span class="hljs-comment">// -&gt;  0</span>
+hamming( <span class="hljs-string">'sam'</span>, <span class="hljs-string">'sat'</span> );
+<span class="hljs-comment">// -&gt; 1</span>
+hamming( <span class="hljs-string">'summer'</span>, <span class="hljs-string">'samuel'</span> );
+<span class="hljs-comment">// -&gt; 3</span>
+hamming( <span class="hljs-string">'saturn'</span>, <span class="hljs-string">'urn'</span> );
+<span class="hljs-comment">// -&gt; throws error</span></pre>
     
   
 
@@ -498,7 +679,7 @@ may be of different lengths. Normalized distance is always between 0 and 1.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>str1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+            <span class='code bold'>str1</span> <code class='quiet'>(<a href="#string">string</a>)</code>
 	    — first string.
 
           </div>
@@ -507,7 +688,7 @@ may be of different lengths. Normalized distance is always between 0 and 1.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>str2</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+            <span class='code bold'>str2</span> <code class='quiet'>(<a href="#string">string</a>)</code>
 	    — second string.
 
           </div>
@@ -522,7 +703,7 @@ may be of different lengths. Normalized distance is always between 0 and 1.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+      <code><a href="#number">number</a></code>:
         normalized hamming distance between 
 <code>str1</code>
  and 
@@ -547,102 +728,6 @@ hammingNormalized( <span class="hljs-string">'sam'</span>, <span class="hljs-str
 <span class="hljs-comment">// -&gt; 0.5</span>
 hammingNormalized( <span class="hljs-string">'saturn'</span>, <span class="hljs-string">'urn'</span> );
 <span class="hljs-comment">// -&gt; 1</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='stringhamming'>
-      string.hamming
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Computes the hamming distance between two strings of identical length.
-This distance is always <code>>= 0</code>.</p>
-
-
-  <div class='pre p1 fill-light mt0'>string.hamming</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>str1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    — first string.
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>str2</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    — second string.
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
-        hamming distance between 
-<code>str1</code>
- and 
-<code>str2</code>
-.
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>hamming( <span class="hljs-string">'john'</span>, <span class="hljs-string">'john'</span> );
-<span class="hljs-comment">// -&gt;  0</span>
-hamming( <span class="hljs-string">'sam'</span>, <span class="hljs-string">'sat'</span> );
-<span class="hljs-comment">// -&gt; 1</span>
-hamming( <span class="hljs-string">'summer'</span>, <span class="hljs-string">'samuel'</span> );
-<span class="hljs-comment">// -&gt; 3</span>
-hamming( <span class="hljs-string">'saturn'</span>, <span class="hljs-string">'urn'</span> );
-<span class="hljs-comment">// -&gt; throws error</span></pre>
     
   
 
@@ -690,7 +775,7 @@ between 0 and 1.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>str1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+            <span class='code bold'>str1</span> <code class='quiet'>(<a href="#string">string</a>)</code>
 	    — first string.
 
           </div>
@@ -699,7 +784,7 @@ between 0 and 1.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>str2</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+            <span class='code bold'>str2</span> <code class='quiet'>(<a href="#string">string</a>)</code>
 	    — second string.
 
           </div>
@@ -714,7 +799,7 @@ between 0 and 1.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+      <code><a href="#number">number</a></code>:
         jaro distance between 
 <code>str1</code>
  and 
@@ -747,6 +832,21 @@ jaro( <span class="hljs-string">'sat'</span>, <span class="hljs-string">'urn'</s
   
 </section>
 
+          
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='vector' class='mt0'>
+    vector
+  </h2>
+
+  
+    
+
+  
+</section>
+</div>
           
         
           
@@ -784,7 +884,7 @@ length.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>va</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>va</span> <code class='quiet'>(<a href="#number">number</a>)</code>
 	    — the first vector.
 
           </div>
@@ -793,7 +893,7 @@ length.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>vb</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>vb</span> <code class='quiet'>(<a href="#number">number</a>)</code>
 	    — the second vector.
 
           </div>
@@ -808,7 +908,7 @@ length.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+      <code><a href="#number">number</a></code>:
         — chebyshev distance between 
 <code>va</code>
  and 
@@ -874,7 +974,7 @@ length.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>va</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>va</span> <code class='quiet'>(<a href="#number">number</a>)</code>
 	    — the first vector.
 
           </div>
@@ -883,7 +983,7 @@ length.</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>vb</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>vb</span> <code class='quiet'>(<a href="#number">number</a>)</code>
 	    — the second vector.
 
           </div>
@@ -898,7 +998,7 @@ length.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+      <code><a href="#number">number</a></code>:
         — taxicab distance between 
 <code>va</code>
  and 

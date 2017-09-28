@@ -1,4 +1,16 @@
 toc:
   - name: Introduction
     file: README.md
-  - name: API
+  - name: bow
+  - bow.cosine
+  - name: number
+  - number.hamming
+  - name: set
+  - set.jaccard
+  - name: string
+  - string.hamming
+  - string.hammingNormalized
+  - string.jaro
+  - name: vector
+  - vector.chebyshev
+  - vector.taxicab

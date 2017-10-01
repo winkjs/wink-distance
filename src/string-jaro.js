@@ -44,6 +44,6 @@ var jaro = require( 'wink-jaro-distance' );
  */
 var jaroDistance = function ( str1, str2 ) {
   return ( jaro( str1, str2 ).distance );
-}; // hamming()
+}; // jaro()
 
 module.exports = jaroDistance;

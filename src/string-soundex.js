@@ -24,7 +24,7 @@
 var soundex = require( 'wink-nlp-utils' ).string.soundex;
 // ## string
 
-// ### jaro
+// ### soundex
 /**
  *
  * Computes the soundex distance between two strings. This distance is either

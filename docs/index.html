@@ -163,6 +163,16 @@
                 
                 </li>
               
+                
+                <li><a
+                  href='#stringsoundex'
+                  class="">
+                  string.soundex
+                  
+                </a>
+                
+                </li>
+              
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
@@ -1017,6 +1027,100 @@ length.</p>
       
       <pre class='p1 overflow-auto round fill-light'>taxicab( [ <span class="hljs-number">0</span>, <span class="hljs-number">0</span> ], [ <span class="hljs-number">6</span>, <span class="hljs-number">6</span> ] );
 <span class="hljs-comment">// -&gt; 12</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='stringsoundex'>
+      string.soundex
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the soundex distance between two strings. This distance is either
+1 indicating phonetic similarity or 0 indicating no similarity.</p>
+
+
+  <div class='pre p1 fill-light mt0'>string.soundex</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str1</span> <code class='quiet'>(<a href="#string">string</a>)</code>
+	    — first string.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str2</span> <code class='quiet'>(<a href="#string">string</a>)</code>
+	    — second string.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#number">number</a></code>:
+        soundex distance between 
+<code>str1</code>
+ and 
+<code>str2</code>
+.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>soundex( <span class="hljs-string">'Burroughs'</span>, <span class="hljs-string">'Burrows'</span> );
+<span class="hljs-comment">// -&gt;  1</span>
+soundex( <span class="hljs-string">'Ekzampul'</span>, <span class="hljs-string">'example'</span> );
+<span class="hljs-comment">// -&gt; 1</span>
+soundex( <span class="hljs-string">'sat'</span>, <span class="hljs-string">'urn'</span> );
+<span class="hljs-comment">// -&gt; 0</span></pre>
     
   
 

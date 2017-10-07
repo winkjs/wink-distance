@@ -53,6 +53,8 @@ var validate = require( 'wink-helpers' ).validate;
  * // -> 0.6666666666666667
  * tversky( sa, sb );
  * // -> 0.6
+ * tversky( sa, sb, 0.5, 0.5 );
+ * // -> 0.6
  * tversky( sa, sb, 0, 1 );
  * // -> 0.5
  */

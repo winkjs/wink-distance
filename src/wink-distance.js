@@ -46,6 +46,8 @@ wd.number.hamming = require( './number-hamming.js' );
 // Set name space.
 // 1. jaccard
 wd.set.jaccard = require( './set-jaccard.js' );
+// 2. tversky
+wd.set.tversky = require( './set-tversky.js' );
 
 // String name space.
 // 1. hamming

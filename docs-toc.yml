@@ -7,6 +7,7 @@ toc:
   - number.hamming
   - name: set
   - set.jaccard
+  - set.tversky
   - name: string
   - string.hamming
   - string.hammingNormalized

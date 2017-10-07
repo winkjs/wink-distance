@@ -34,7 +34,7 @@
  * @name number.hamming
  * @param {number} na — the first number.
  * @param {number} nb — the second number.
- * @return {number} — hamming distance between `na` and `nb`.
+ * @return {number} hamming distance between `na` and `nb`.
  *
  * @example
  * hamming( 8, 8 );

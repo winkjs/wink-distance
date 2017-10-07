@@ -34,7 +34,7 @@
  * @name vector.chebyshev
  * @param {number} va — the first vector.
  * @param {number} vb — the second vector.
- * @return {number} — chebyshev distance between `va` and `vb`.
+ * @return {number} chebyshev distance between `va` and `vb`.
  *
  * @example
  * chebyshev( [ 0, 0 ], [ 6, 6 ] );

@@ -37,7 +37,7 @@
  * @param {object} a — the first set of bows i.e word (i.e. key) and it's frequency
  * (i.e. value) pairs.
  * @param {object} b — the second set of bows.
- * @return {number} - cosine distance between `a` and `b`.
+ * @return {number} cosine distance between `a` and `b`.
  *
  * @example
  * // bow for "the dog chased the cat"

@@ -34,7 +34,7 @@
  * @name vector.taxicab
  * @param {number} va — the first vector.
  * @param {number} vb — the second vector.
- * @return {number} — taxicab distance between `va` and `vb`.
+ * @return {number} taxicab distance between `va` and `vb`.
  *
  * @example
  * taxicab( [ 0, 0 ], [ 6, 6 ] );

@@ -37,7 +37,7 @@
  * @name set.jaccard
  * @param {set} sa — the first set.
  * @param {set} sb — the second set.
- * @return {number} — the Jaccard distance between `sa` and `sb`.
+ * @return {number} the Jaccard distance between `sa` and `sb`.
  *
  * @example
  * // Set for :-)

@@ -16,6 +16,7 @@
     "Jaro",
     "Manhattan",
     "Soundex",
+    "Tversky",
     "Taxicab",
     "wink"
   ],
@@ -52,6 +53,7 @@
   },
   "runkitExampleFilename": "./runkit/example.js",
   "dependencies": {
+    "wink-helpers": "^1.2.0",
     "wink-jaro-distance": "^1.0.3",
     "wink-nlp-utils": "^1.5.0"
   }

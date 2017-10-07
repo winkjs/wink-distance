@@ -173,6 +173,16 @@
                 
                 </li>
               
+                
+                <li><a
+                  href='#settversky'
+                  class="">
+                  set.tversky
+                  
+                </a>
+                
+                </li>
+              
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
@@ -1121,6 +1131,127 @@ length.</p>
       
       <pre class='p1 overflow-auto round fill-light'>taxicab( [ <span class="hljs-number">0</span>, <span class="hljs-number">0</span> ], [ <span class="hljs-number">6</span>, <span class="hljs-number">6</span> ] );
 <span class="hljs-comment">// -&gt; 12</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='settversky'>
+      set.tversky
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the tversky distance between input sets <code>sa</code> and <code>sb</code>.
+This distance is always between 0 and 1. Tversky calls <code>sa</code> as
+<strong>prototype</strong> and <code>sb</code> as <strong>variant</strong>. The <code>alpha</code> corresponds
+to the weight of prototype, whereas <code>beta</code> corresponds to the
+weight of variant.</p>
+
+
+  <div class='pre p1 fill-light mt0'>set.tversky</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>sa</span> <code class='quiet'>(<a href="#set">set</a>)</code>
+	    — the first set or the prototype.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>sb</span> <code class='quiet'>(<a href="#set">set</a>)</code>
+	    — the second set or the variant.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>alpha</span> <code class='quiet'>(<a href="#number">number</a>
+            = <code>0.5</code>)</code>
+	    — the prototype weight.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>beta</span> <code class='quiet'>(<a href="#number">number</a>
+            = <code>0.5</code>)</code>
+	    — the variant weight.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#number">number</a></code>:
+        the tversky distance between 
+<code>sa</code>
+ and 
+<code>sb</code>
+.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Set for :-)</span>
+<span class="hljs-keyword">var</span> sa = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>( <span class="hljs-string">':-)'</span> );
+<span class="hljs-comment">// Set for :p</span>
+<span class="hljs-keyword">var</span> sb = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>( <span class="hljs-string">':p'</span> );
+tversky( sa, sb, <span class="hljs-number">1</span>, <span class="hljs-number">0</span> );
+<span class="hljs-comment">// -&gt; 0.6666666666666667</span>
+tversky( sa, sb );
+<span class="hljs-comment">// -&gt; 0.6</span>
+tversky( sa, sb, <span class="hljs-number">0</span>, <span class="hljs-number">1</span> );
+<span class="hljs-comment">// -&gt; 0.5</span></pre>
     
   
 

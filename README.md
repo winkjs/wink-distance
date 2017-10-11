@@ -17,7 +17,7 @@ Use [npm](https://www.npmjs.com/package/wink-distance) to install:
 
 
 ### Documentation
-For detailed API docs, check out https://winkjs.github.io/wink-distance/ URL!
+For detailed API docs, check out http://wink.org.in/wink-distance/ URL!
 
 ### Need Help?
 

@@ -53,3 +53,13 @@ describe( 'string-jaro normal behaviour', function () {
     } );
   } );
 } );
+
+describe( 'string-jaro with boosting & scaling factor behaviour with MARTHA & MARhTA', function () {
+  it( 'should return 0.022 if the input is 0.3 & 0.2 ', function () {
+    expect( +jaroWinkler( 'MARHTA', 'MARTHA', 0.3, 0.2 ).toFixed( 3 ) ).to.equal( 0.022 );
+  } );
+  // Jaro distance between these two strings is 0.056!
+  it( 'should return 0.056 if the input is 0.055, 0.2', function () {
+    expect( +jaroWinkler( 'MARHTA', 'MARTHA', 0.055, 0.2 ).toFixed( 3 ) ).to.equal( 0.056 );
+  } );
+} );

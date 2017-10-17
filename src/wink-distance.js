@@ -55,9 +55,11 @@ wd.string.hamming = require( './string-hamming.js' );
 // 2. hammingNormalized
 wd.string.hammingNormalized = require( './string-hamming-normalized.js' );
 // 3. jaro
-wd.string.jaro = require( './string-jaro' );
-// 4. soundex
-wd.string.soundex = require( './string-soundex' );
+wd.string.jaro = require( './string-jaro.js' );
+// 4. jaroWinkler
+wd.string.jaroWinkler = require( './string-jaro-winkler.js' );
+// 5. soundex
+wd.string.soundex = require( './string-soundex.js' );
 
 // Vector name space.
 // 1. taxicab

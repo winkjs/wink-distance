@@ -12,6 +12,7 @@ toc:
   - string.hamming
   - string.hammingNormalized
   - string.jaro
+  - string.jaroWinkler
   - string.soundex
   - name: vector
   - vector.chebyshev

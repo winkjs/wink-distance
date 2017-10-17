@@ -24,7 +24,7 @@
 //
 var chai = require( 'chai' );
 var mocha = require( 'mocha' );
-var jaro = require( '../src/wink-distance.js' ).string.jaro;
+var jaroWinkler = require( '../src/wink-distance.js' ).string.jaroWinkler;
 
 var expect = chai.expect;
 var describe = mocha.describe;
@@ -32,16 +32,16 @@ var it = mocha.it;
 
 describe( 'string-jaro normal behaviour', function () {
   var tests = [
-    { whenInputIs: { str1: 'SHACKLEFORD', str2: 'SHACKELFORD' }, expectedOutputIs: 0.030 },
+    { whenInputIs: { str1: 'SHACKLEFORD', str2: 'SHACKELFORD' }, expectedOutputIs: 0.018 },
     { whenInputIs: { str1: 'DUNNINGHAM', str2: 'CUNNIGHAM' }, expectedOutputIs: 0.104 },
-    { whenInputIs: { str1: 'JONES', str2: 'JOHNSON' }, expectedOutputIs: 0.210 },
-    { whenInputIs: { str1: 'MASSEY', str2: 'MASSIE' }, expectedOutputIs: 0.111 },
-    { whenInputIs: { str1: 'ABROMS', str2: 'ABRAMS' }, expectedOutputIs: 0.111 },
-    { whenInputIs: { str1: 'DWAYNE', str2: 'DUANE' }, expectedOutputIs: 0.178 },
-    { whenInputIs: { str1: 'SEAN', str2: 'SUSAN' }, expectedOutputIs: 0.217 },
-    { whenInputIs: { str1: 'MICHELLE', str2: 'MICHAEL' }, expectedOutputIs: 0.131 },
-    { whenInputIs: { str1: 'MARHTA', str2: 'MARTHA' }, expectedOutputIs: 0.056 },
-    { whenInputIs: { str1: 'TANYA', str2: 'TONYA' }, expectedOutputIs: 0.133 },
+    { whenInputIs: { str1: 'JONES', str2: 'JOHNSON' }, expectedOutputIs: 0.168 },
+    { whenInputIs: { str1: 'MASSEY', str2: 'MASSIE' }, expectedOutputIs: 0.067 },
+    { whenInputIs: { str1: 'ABROMS', str2: 'ABRAMS' }, expectedOutputIs: 0.078 },
+    { whenInputIs: { str1: 'DWAYNE', str2: 'DUANE' }, expectedOutputIs: 0.160 },
+    { whenInputIs: { str1: 'SEAN', str2: 'SUSAN' }, expectedOutputIs: 0.195 },
+    { whenInputIs: { str1: 'MICHELLE', str2: 'MICHAEL' }, expectedOutputIs: 0.079 },
+    { whenInputIs: { str1: 'MARHTA', str2: 'MARTHA' }, expectedOutputIs: 0.039 },
+    { whenInputIs: { str1: 'TANYA', str2: 'TONYA' }, expectedOutputIs: 0.120 },
     { whenInputIs: { str1: 'sat', str2: 'urn' }, expectedOutputIs: 1 },
     { whenInputIs: { str1: 'saturn', str2: 'saturn' }, expectedOutputIs: 0 },
     { whenInputIs: { str1: '', str2: '' }, expectedOutputIs: 0 },
@@ -49,7 +49,7 @@ describe( 'string-jaro normal behaviour', function () {
 
   tests.forEach( function ( test ) {
     it( 'should return ' + JSON.stringify( test.expectedOutputIs ) + ' if the input is ' + JSON.stringify( test.whenInputIs ), function () {
-      expect( +jaro( test.whenInputIs.str1, test.whenInputIs.str2 ).toFixed( 3 ) ).to.equal( test.expectedOutputIs );
+      expect( +jaroWinkler( test.whenInputIs.str1, test.whenInputIs.str2 ).toFixed( 3 ) ).to.equal( test.expectedOutputIs );
     } );
   } );
 } );

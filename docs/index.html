@@ -145,6 +145,16 @@
               
                 
                 <li><a
+                  href='#stringjarowinkler'
+                  class="">
+                  string.jaroWinkler
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#stringsoundex'
                   class="">
                   string.soundex
@@ -965,6 +975,129 @@ jaro( <span class="hljs-string">'abcdef'</span>, <span class="hljs-string">'fedc
 <span class="hljs-comment">// -&gt; 0.6111111111111112</span>
 jaro( <span class="hljs-string">'sat'</span>, <span class="hljs-string">'urn'</span> );
 <span class="hljs-comment">// -&gt; 1</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='stringjarowinkler'>
+      string.jaroWinkler
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Computes the jaro winkler distance between two strings. This distance,
+controlled by the <code>scalingFactor</code>, is always between 0 and 1.</p>
+
+
+  <div class='pre p1 fill-light mt0'>string.jaroWinkler</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str1</span> <code class='quiet'>(<a href="#string">string</a>)</code>
+	    — first string.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>str2</span> <code class='quiet'>(<a href="#string">string</a>)</code>
+	    — second string.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>boostThreshold</span> <code class='quiet'>(<a href="#number">number</a>
+            = <code>0.3</code>)</code>
+	    — beyond which scaling is applied: it is
+applied only if the jaro distance between the input strings is less than or
+equal to this value. Any value > 1, is capped at 1 automatically.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>scalingFactor</span> <code class='quiet'>(<a href="#number">number</a>
+            = <code>0.1</code>)</code>
+	    — is used to scale the distance.
+Such scaling, if applied, is proportional to the number of shared
+consecutive characters from the first character of 
+<code>str1</code>
+ and 
+<code>str2</code>
+.
+Any value > 0.25, is capped at 0.25 automatically.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#number">number</a></code>:
+        jaro winkler distance between 
+<code>str1</code>
+ and 
+<code>str2</code>
+.
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>jaroWinkler( <span class="hljs-string">'martha'</span>, <span class="hljs-string">'marhta'</span> );
+<span class="hljs-comment">// -&gt;  0.03888888888888883</span>
+jaroWinkler( <span class="hljs-string">'martha'</span>, <span class="hljs-string">'marhta'</span>, <span class="hljs-number">0.3</span>, <span class="hljs-number">0.2</span> );
+<span class="hljs-comment">// -&gt; 0.022222222222222185</span>
+jaroWinkler( <span class="hljs-string">'duane'</span>, <span class="hljs-string">'dwayne'</span> );
+<span class="hljs-comment">// -&gt; .15999999999999992</span></pre>
     
   
 

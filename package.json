@@ -55,6 +55,6 @@
   "dependencies": {
     "wink-helpers": "^1.2.0",
     "wink-jaro-distance": "^1.0.3",
-    "wink-nlp-utils": "^1.5.0"
+    "wink-nlp-utils": "^1.7.0"
   }
 }

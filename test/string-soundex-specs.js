@@ -32,11 +32,11 @@ var it = mocha.it;
 
 describe( 'string-soundex normal behaviour', function () {
   var tests = [
-    { whenInputIs: { str1: 'john', str2: 'johny' }, expectedOutputIs: 1 },
-    { whenInputIs: { str1: 'sam', str2: 'sat' }, expectedOutputIs: 0 },
-    { whenInputIs: { str1: '', str2: '' }, expectedOutputIs: 1 },
-    { whenInputIs: { str1: 'Burroughs', str2: 'Burrows' }, expectedOutputIs: 1 },
-    { whenInputIs: { str1: 'Ekzampul', str2: 'example' }, expectedOutputIs: 1 },
+    { whenInputIs: { str1: 'john', str2: 'johny' }, expectedOutputIs: 0 },
+    { whenInputIs: { str1: 'sam', str2: 'sat' }, expectedOutputIs: 1 },
+    { whenInputIs: { str1: '', str2: '' }, expectedOutputIs: 0 },
+    { whenInputIs: { str1: 'Burroughs', str2: 'Burrows' }, expectedOutputIs: 0 },
+    { whenInputIs: { str1: 'Ekzampul', str2: 'example' }, expectedOutputIs: 0 },
   ];
 
   tests.forEach( function ( test ) {

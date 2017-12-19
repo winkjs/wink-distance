@@ -36,14 +36,14 @@ var soundex = require( 'wink-nlp-utils' ).string.soundex;
  * @return {number} soundex distance between `str1` and `str2`.
  * @example
  * soundex( 'Burroughs', 'Burrows' );
- * // ->  1
+ * // ->  0
  * soundex( 'Ekzampul', 'example' );
- * // -> 1
- * soundex( 'sat', 'urn' );
  * // -> 0
+ * soundex( 'sat', 'urn' );
+ * // -> 1
  */
 var soundexDistance = function ( str1, str2 ) {
-  return ( soundex( str1 ) === soundex( str2 ) ) ? 1 : 0;
+  return ( soundex( str1 ) === soundex( str2 ) ) ? 0 : 1;
 }; // soundexDistance()
 
 module.exports = soundexDistance;

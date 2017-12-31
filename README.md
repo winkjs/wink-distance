@@ -6,7 +6,7 @@ Distance/Similarity functions for Bag of Words, Strings, Vectors and more.
 
 [<img align="right" src="https://decisively.github.io/wink-logos/logo-title.png" width="100px" >](http://wink.org.in/)
 
-Compute distances or similarities needed for NLP, de-duplication and clustering using **`wink-distance`**. It is a part of [wink](http://wink.org.in/) — a growing family of high quality packages for Statistical Analysis, Natural Language Processing and Machine Learning in NodeJS.
+Compute distances or similarities needed for NLP, de-duplication and clustering using **`wink-distance`**. It is a part of [wink](http://winkjs.org/) — a growing family of high quality packages for Statistical Analysis, Natural Language Processing and Machine Learning in NodeJS.
 
 
 ### Installation

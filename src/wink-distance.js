@@ -58,7 +58,9 @@ wd.string.hammingNormalized = require( './string-hamming-normalized.js' );
 wd.string.jaro = require( './string-jaro.js' );
 // 4. jaroWinkler
 wd.string.jaroWinkler = require( './string-jaro-winkler.js' );
-// 5. soundex
+// 5. levenshtein
+wd.string.levenshtein = require( './string-levenshtein.js' );
+// 6. soundex
 wd.string.soundex = require( './string-soundex.js' );
 
 // Vector name space.

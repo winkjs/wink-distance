@@ -31,9 +31,9 @@
  * Computes the the hamming distance between two numbers; each number is
  * assumed to be decimal representation of a binary number.
  *
- * @name number.hamming
- * @param {number} na — the first number.
- * @param {number} nb — the second number.
+ * @method number.hamming
+ * @param {number} na the first number.
+ * @param {number} nb the second number.
  * @return {number} hamming distance between `na` and `nb`.
  *
  * @example

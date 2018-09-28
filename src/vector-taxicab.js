@@ -31,9 +31,9 @@
  * Computes the taxicab or manhattan distance between two vectors of identical
  * length.
  *
- * @name vector.taxicab
- * @param {number} va — the first vector.
- * @param {number} vb — the second vector.
+ * @method vector.taxicab
+ * @param {number} va the first vector.
+ * @param {number} vb the second vector.
  * @return {number} taxicab distance between `va` and `vb`.
  *
  * @example

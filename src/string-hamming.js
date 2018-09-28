@@ -29,9 +29,9 @@
  * Computes the hamming distance between two strings of identical length.
  * This distance is always `>= 0`.
  *
- * @name string.hamming
- * @param {string} str1 — first string.
- * @param {string} str2 — second string.
+ * @method string.hamming
+ * @param {string} str1 first string.
+ * @param {string} str2 second string.
  * @return {number} hamming distance between `str1` and `str2`.
  * @example
  * hamming( 'john', 'john' );

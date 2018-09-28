@@ -23,15 +23,35 @@
 
 var wd = Object.create( null );
 
-// BOW name space.
+/**
+ * BOW
+ * @namespace bow
+ */
 wd.bow = Object.create( null );
-// Number name space.
+
+/**
+ * Number
+ * @namespace number
+ */
+
 wd.number = Object.create( null );
-// Set name space.
+
+/**
+ * Set
+ * @namespace set
+ */
 wd.set = Object.create( null );
-// String name space.
+
+/**
+ * String
+ * @namespace string
+ */
 wd.string = Object.create( null );
-// Vector name space.
+
+/**
+ * Vector
+ * @namespace vector
+ */
 wd.vector = Object.create( null );
 
 

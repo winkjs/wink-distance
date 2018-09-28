@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>wink-distance.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="http://winkjs.org" target="_blank" >Wink JS</a></h2><h2><a href="https://github.com/winkjs/wink-distance" target="_blank" >Github</a></h2><h3>Namespaces</h3><ul><li><a href="bow.html">bow</a><ul class='methods'><li data-type='method'><a href="bow.html#.cosine">cosine</a></li></ul></li><li><a href="number.html">number</a><ul class='methods'><li data-type='method'><a href="number.html#.hamming">hamming</a></li></ul></li><li><a href="set.html">set</a><ul class='methods'><li data-type='method'><a href="set.html#.jaccard">jaccard</a></li><li data-type='method'><a href="set.html#.tversky">tversky</a></li></ul></li><li><a href="string.html">string</a><ul class='methods'><li data-type='method'><a href="string.html#.hamming">hamming</a></li><li data-type='method'><a href="string.html#.hammingNormalized">hammingNormalized</a></li><li data-type='method'><a href="string.html#.jaro">jaro</a></li><li data-type='method'><a href="string.html#.jaroWinkler">jaroWinkler</a></li><li data-type='method'><a href="string.html#.levenshtein">levenshtein</a></li><li data-type='method'><a href="string.html#.soundex">soundex</a></li></ul></li><li><a href="vector.html">vector</a><ul class='methods'><li data-type='method'><a href="vector.html#.chebyshev">chebyshev</a></li><li data-type='method'><a href="vector.html#.taxicab">taxicab</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">wink-distance.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>//     wink-distance
+//     Distance functions for Bag of Words, Strings,
+//     Vectors and more.
+//
+//     Copyright (C) 2017-18  GRAYPE Systems Private Limited
+//
+//     This file is part of “wink-distance”.
+//
+//     “wink-distance” is free software: you can redistribute
+//     it and/or modify it under the terms of the GNU Affero
+//     General Public License as published by the Free
+//     Software Foundation, version 3 of the License.
+//
+//     “wink-distance” is distributed in the hope that it will
+//     be useful, but WITHOUT ANY WARRANTY; without even
+//     the implied warranty of MERCHANTABILITY or FITNESS
+//     FOR A PARTICULAR PURPOSE.  See the GNU Affero General
+//     Public License for more details.
+//
+//     You should have received a copy of the GNU Affero
+//     General Public License along with “wink-distance”.
+//     If not, see &lt;http://www.gnu.org/licenses/>.
+
+var wd = Object.create( null );
+
+/**
+ * BOW
+ * @namespace bow
+ */
+wd.bow = Object.create( null );
+
+/**
+ * Number
+ * @namespace number
+ */
+
+wd.number = Object.create( null );
+
+/**
+ * Set
+ * @namespace set
+ */
+wd.set = Object.create( null );
+
+/**
+ * String
+ * @namespace string
+ */
+wd.string = Object.create( null );
+
+/**
+ * Vector
+ * @namespace vector
+ */
+wd.vector = Object.create( null );
+
+
+// BOW name space.
+// 1. cosine
+wd.bow.cosine = require( './bow-cosine.js' );
+
+// Number name space.
+// 1. hamming
+wd.number.hamming = require( './number-hamming.js' );
+
+// Set name space.
+// 1. jaccard
+wd.set.jaccard = require( './set-jaccard.js' );
+// 2. tversky
+wd.set.tversky = require( './set-tversky.js' );
+
+// String name space.
+// 1. hamming
+wd.string.hamming = require( './string-hamming.js' );
+// 2. hammingNormalized
+wd.string.hammingNormalized = require( './string-hamming-normalized.js' );
+// 3. jaro
+wd.string.jaro = require( './string-jaro.js' );
+// 4. jaroWinkler
+wd.string.jaroWinkler = require( './string-jaro-winkler.js' );
+// 5. levenshtein
+wd.string.levenshtein = require( './string-levenshtein.js' );
+// 6. soundex
+wd.string.soundex = require( './string-soundex.js' );
+
+// Vector name space.
+// 1. taxicab
+wd.vector.taxicab = require( './vector-taxicab.js' );
+// Create an alias.
+wd.vector.manhattan = require( './vector-taxicab.js' );
+// 2. chebyshev
+wd.vector.chebyshev = require( './vector-chebyshev.js' );
+
+
+module.exports = wd;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Sep 28 2018 12:16:59 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>vector - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="http://winkjs.org" target="_blank" >Wink JS</a></h2><h2><a href="https://github.com/winkjs/wink-distance" target="_blank" >Github</a></h2><h3>Namespaces</h3><ul><li><a href="bow.html">bow</a><ul class='methods'><li data-type='method'><a href="bow.html#.cosine">cosine</a></li></ul></li><li><a href="number.html">number</a><ul class='methods'><li data-type='method'><a href="number.html#.hamming">hamming</a></li></ul></li><li><a href="set.html">set</a><ul class='methods'><li data-type='method'><a href="set.html#.jaccard">jaccard</a></li><li data-type='method'><a href="set.html#.tversky">tversky</a></li></ul></li><li><a href="string.html">string</a><ul class='methods'><li data-type='method'><a href="string.html#.hamming">hamming</a></li><li data-type='method'><a href="string.html#.hammingNormalized">hammingNormalized</a></li><li data-type='method'><a href="string.html#.jaro">jaro</a></li><li data-type='method'><a href="string.html#.jaroWinkler">jaroWinkler</a></li><li data-type='method'><a href="string.html#.levenshtein">levenshtein</a></li><li data-type='method'><a href="string.html#.soundex">soundex</a></li></ul></li><li><a href="vector.html">vector</a><ul class='methods'><li data-type='method'><a href="vector.html#.chebyshev">chebyshev</a></li><li data-type='method'><a href="vector.html#.taxicab">taxicab</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">vector</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        vector
+        </h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="wink-distance.js.html">wink-distance.js</a>, <a href="wink-distance.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+            
+                <div class="description"><p>Vector</p></div>
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".chebyshev"><span class="type-signature">(static) </span>chebyshev<span class="signature">(va, vb)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="vector-chebyshev.js.html">vector-chebyshev.js</a>, <a href="vector-chebyshev.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Computes the chebyshev or manhattan distance between two vectors of identical
+length.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>chebyshev( [ 0, 0 ], [ 6, 6 ] );
+// -> 6</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>va</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="number.html">number</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the first vector.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>vb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="number.html">number</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the second vector.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>chebyshev distance between <code>va</code> and <code>vb</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="number.html">number</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".taxicab"><span class="type-signature">(static) </span>taxicab<span class="signature">(va, vb)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="vector-taxicab.js.html">vector-taxicab.js</a>, <a href="vector-taxicab.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Computes the taxicab or manhattan distance between two vectors of identical
+length.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>taxicab( [ 0, 0 ], [ 6, 6 ] );
+// -> 12</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>va</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="number.html">number</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the first vector.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>vb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="number.html">number</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the second vector.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>taxicab distance between <code>va</code> and <code>vb</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="number.html">number</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Sep 28 2018 12:16:59 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+
+</body>
+</html>

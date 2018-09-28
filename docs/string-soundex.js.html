@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>string-soundex.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -31,37 +31,68 @@
 
 <div id="main">
     
+    <h1 class="page-title">string-soundex.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>//     wink-distance
+//     Distance functions for Bag of Words, Strings,
+//     Vectors and more.
+//
+//     Copyright (C) 2017-18  GRAYPE Systems Private Limited
+//
+//     This file is part of “wink-distance”.
+//
+//     “wink-distance” is free software: you can redistribute
+//     it and/or modify it under the terms of the GNU Affero
+//     General Public License as published by the Free
+//     Software Foundation, version 3 of the License.
+//
+//     “wink-distance” is distributed in the hope that it will
+//     be useful, but WITHOUT ANY WARRANTY; without even
+//     the implied warranty of MERCHANTABILITY or FITNESS
+//     FOR A PARTICULAR PURPOSE.  See the GNU Affero General
+//     Public License for more details.
+//
+//     You should have received a copy of the GNU Affero
+//     General Public License along with “wink-distance”.
+//     If not, see &lt;http://www.gnu.org/licenses/>.
 
+var soundex = require( 'wink-nlp-utils' ).string.soundex;
+// ## string
 
+// ### soundex
+/**
+ *
+ * Computes the soundex distance between two strings. This distance is either
+ * 1 indicating phonetic similarity or 0 indicating no similarity.
+ *
+ * @method string.soundex
+ * @param {string} str1 first string.
+ * @param {string} str2 second string.
+ * @return {number} soundex distance between `str1` and `str2`.
+ * @example
+ * soundex( 'Burroughs', 'Burrows' );
+ * // ->  0
+ * soundex( 'Ekzampul', 'example' );
+ * // -> 0
+ * soundex( 'sat', 'urn' );
+ * // -> 1
+ */
+var soundexDistance = function ( str1, str2 ) {
+  return ( soundex( str1 ) === soundex( str2 ) ) ? 0 : 1;
+}; // soundexDistance()
 
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><h1>wink-distance</h1><p>Distance/Similarity functions for Bag of Words, Strings, Vectors and more.</p>
-<h3><a href="https://travis-ci.org/winkjs/wink-distance"><img src="https://api.travis-ci.org/winkjs/wink-distance.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/github/winkjs/wink-distance?branch=master"><img src="https://coveralls.io/repos/github/winkjs/wink-distance/badge.svg?branch=master" alt="Coverage Status"></a> <a href="http://inch-ci.org/github/winkjs/wink-distance"><img src="http://inch-ci.org/github/winkjs/wink-distance.svg?branch=master" alt="Inline docs"></a> <a href="https://david-dm.org/winkjs/wink-distance"><img src="https://david-dm.org/winkjs/wink-distance/status.svg" alt="dependencies Status"></a> <a href="https://david-dm.org/winkjs/wink-distance?type=dev"><img src="https://david-dm.org/winkjs/wink-distance/dev-status.svg" alt="devDependencies Status"></a> <a href="https://gitter.im/winkjs/Lobby"><img src="https://img.shields.io/gitter/room/nwjs/nw.js.svg" alt="Gitter"></a></h3><p><a href="http://wink.org.in/"><img align="right" src="https://decisively.github.io/wink-logos/logo-title.png" width="100px" ></a></p>
-<p>Compute distances or similarities needed for NLP, de-duplication and clustering using <strong><code>wink-distance</code></strong>. It is a part of <a href="http://winkjs.org/">wink</a> — a growing family of high quality packages for Statistical Analysis, Natural Language Processing and Machine Learning in NodeJS.</p>
-<h3>Installation</h3><p>Use <a href="https://www.npmjs.com/package/wink-distance">npm</a> to install:</p>
-<pre class="prettyprint source"><code>npm install wink-distance --save</code></pre><h3>Documentation</h3><p>Check out the <a href="http://wink.org.in/wink-distance/">distance/similarity API documentation</a> to learn more.</p>
-<h3>Need Help?</h3><p>If you spot a bug and the same has not yet been reported, raise a new <a href="https://github.com/winkjs/wink-distance/issues">issue</a> or consider fixing it and sending a pull request.</p>
-<h3>Copyright &amp; License</h3><p><strong>wink-distance</strong> is copyright 2017-18 <a href="http://graype.in/">GRAYPE Systems Private Limited</a>.</p>
-<p>It is licensed under the under the terms of the GNU Affero General Public License as published by the Free
-Software Foundation, version 3 of the License.</p></article>
+module.exports = soundexDistance;
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

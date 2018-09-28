@@ -34,9 +34,9 @@
  * Computes the Jaccard distance between input sets `sa` and `sb`.
  * This distance is always between 0 and 1.
  *
- * @name set.jaccard
- * @param {set} sa — the first set.
- * @param {set} sb — the second set.
+ * @method set.jaccard
+ * @param {set} sa the first set.
+ * @param {set} sb the second set.
  * @return {number} the Jaccard distance between `sa` and `sb`.
  *
  * @example

@@ -37,11 +37,11 @@ var validate = require( 'wink-helpers' ).validate;
  * to the weight of prototype, whereas `beta` corresponds to the
  * weight of variant.
  *
- * @name set.tversky
- * @param {set} sa — the first set or the prototype.
- * @param {set} sb — the second set or the variant.
- * @param {number} [alpha=0.5] — the prototype weight.
- * @param {number} [beta=0.5] — the variant weight.
+ * @method set.tversky
+ * @param {set} sa the first set or the prototype.
+ * @param {set} sb the second set or the variant.
+ * @param {number} [alpha=0.5] the prototype weight.
+ * @param {number} [beta=0.5] the variant weight.
  * @return {number} the tversky distance between `sa` and `sb`.
  *
  * @example

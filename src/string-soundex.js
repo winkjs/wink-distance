@@ -30,9 +30,9 @@ var soundex = require( 'wink-nlp-utils' ).string.soundex;
  * Computes the soundex distance between two strings. This distance is either
  * 1 indicating phonetic similarity or 0 indicating no similarity.
  *
- * @name string.soundex
- * @param {string} str1 — first string.
- * @param {string} str2 — second string.
+ * @method string.soundex
+ * @param {string} str1 first string.
+ * @param {string} str2 second string.
  * @return {number} soundex distance between `str1` and `str2`.
  * @example
  * soundex( 'Burroughs', 'Burrows' );

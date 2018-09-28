@@ -30,13 +30,13 @@ var jaro = require( './string-jaro.js' );
  * Computes the jaro winkler distance between two strings. This distance,
  * controlled by the `scalingFactor`, is always between 0 and 1.
  *
- * @name string.jaroWinkler
- * @param {string} str1 — first string.
- * @param {string} str2 — second string.
- * @param {number} [boostThreshold=0.3] — beyond which scaling is applied: it is
+ * @method string.jaroWinkler
+ * @param {string} str1 first string.
+ * @param {string} str2 second string.
+ * @param {number} [boostThreshold=0.3] beyond which scaling is applied: it is
  * applied only if the jaro distance between the input strings is less than or
  * equal to this value. Any value > 1, is capped at 1 automatically.
- * @param {number} [scalingFactor=0.1] — is used to scale the distance.
+ * @param {number} [scalingFactor=0.1] is used to scale the distance.
  * Such scaling, if applied, is proportional to the number of shared
  * consecutive characters from the first character of `str1` and `str2`.
  * Any value > 0.25, is capped at 0.25 automatically.

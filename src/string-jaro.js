@@ -30,9 +30,9 @@ var jaro = require( 'wink-jaro-distance' );
  * Computes the jaro distance between two strings. This distance is always
  * between 0 and 1.
  *
- * @name string.jaro
- * @param {string} str1 — first string.
- * @param {string} str2 — second string.
+ * @method string.jaro
+ * @param {string} str1 first string.
+ * @param {string} str2 second string.
  * @return {number} jaro distance between `str1` and `str2`.
  * @example
  * jaro( 'father', 'farther' );

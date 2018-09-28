@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>string-jaro-winkler.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="http://winkjs.org" target="_blank" >Wink JS</a></h2><h2><a href="https://github.com/winkjs/wink-distance" target="_blank" >Github</a></h2><h3>Namespaces</h3><ul><li><a href="bow.html">bow</a><ul class='methods'><li data-type='method'><a href="bow.html#.cosine">cosine</a></li></ul></li><li><a href="number.html">number</a><ul class='methods'><li data-type='method'><a href="number.html#.hamming">hamming</a></li></ul></li><li><a href="set.html">set</a><ul class='methods'><li data-type='method'><a href="set.html#.jaccard">jaccard</a></li><li data-type='method'><a href="set.html#.tversky">tversky</a></li></ul></li><li><a href="string.html">string</a><ul class='methods'><li data-type='method'><a href="string.html#.hamming">hamming</a></li><li data-type='method'><a href="string.html#.hammingNormalized">hammingNormalized</a></li><li data-type='method'><a href="string.html#.jaro">jaro</a></li><li data-type='method'><a href="string.html#.jaroWinkler">jaroWinkler</a></li><li data-type='method'><a href="string.html#.levenshtein">levenshtein</a></li><li data-type='method'><a href="string.html#.soundex">soundex</a></li></ul></li><li><a href="vector.html">vector</a><ul class='methods'><li data-type='method'><a href="vector.html#.chebyshev">chebyshev</a></li><li data-type='method'><a href="vector.html#.taxicab">taxicab</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">string-jaro-winkler.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>//     wink-distance
+//     Distance functions for Bag of Words, Strings,
+//     Vectors and more.
+//
+//     Copyright (C) 2017-18  GRAYPE Systems Private Limited
+//
+//     This file is part of “wink-distance”.
+//
+//     “wink-distance” is free software: you can redistribute
+//     it and/or modify it under the terms of the GNU Affero
+//     General Public License as published by the Free
+//     Software Foundation, version 3 of the License.
+//
+//     “wink-distance” is distributed in the hope that it will
+//     be useful, but WITHOUT ANY WARRANTY; without even
+//     the implied warranty of MERCHANTABILITY or FITNESS
+//     FOR A PARTICULAR PURPOSE.  See the GNU Affero General
+//     Public License for more details.
+//
+//     You should have received a copy of the GNU Affero
+//     General Public License along with “wink-distance”.
+//     If not, see &lt;http://www.gnu.org/licenses/>.
+
+var jaro = require( './string-jaro.js' );
+// ## string
+
+// ### jaro
+/**
+ *
+ * Computes the jaro winkler distance between two strings. This distance,
+ * controlled by the `scalingFactor`, is always between 0 and 1.
+ *
+ * @method string.jaroWinkler
+ * @param {string} str1 first string.
+ * @param {string} str2 second string.
+ * @param {number} [boostThreshold=0.3] beyond which scaling is applied: it is
+ * applied only if the jaro distance between the input strings is less than or
+ * equal to this value. Any value > 1, is capped at 1 automatically.
+ * @param {number} [scalingFactor=0.1] is used to scale the distance.
+ * Such scaling, if applied, is proportional to the number of shared
+ * consecutive characters from the first character of `str1` and `str2`.
+ * Any value > 0.25, is capped at 0.25 automatically.
+ * @return {number} jaro winkler distance between `str1` and `str2`.
+ * @example
+ * jaroWinkler( 'martha', 'marhta' );
+ * // ->  0.03888888888888883
+ * jaroWinkler( 'martha', 'marhta', 0.3, 0.2 );
+ * // -> 0.022222222222222185
+ * jaroWinkler( 'duane', 'dwayne' );
+ * // -> .15999999999999992
+ */
+var jaroWinkler = function ( str1, str2, boostThreshold, scalingFactor ) {
+   // Early exit!
+   if ( str1 === str2 ) return 0;
+   // Setup default values if undefined.
+   var sf = ( scalingFactor === undefined ) ? 0.1 : scalingFactor;
+   var bt = ( boostThreshold === undefined ) ? 0.3 : boostThreshold;
+   // Fix scaling factor &amp; boost threshold, if required.
+   sf = Math.min( Math.abs( sf ), 0.25 );
+   bt = Math.min( Math.abs( bt ), 1 );
+
+   var distance = jaro( str1, str2 );
+
+   if ( distance > bt ) return distance;
+
+   var pLimit = Math.min( str1.length, str2.length, 4 );
+   var l = 0;
+
+   for ( var i = 0; i &lt; pLimit; i += 1 ) {
+     if ( str1[ i ] === str2[ i ] ) {
+       l += 1;
+     } else {
+       break;
+     }
+   }
+
+   distance -= ( l * sf * distance );
+
+   return distance;
+ }; // jaroWinkler()
+
+module.exports = jaroWinkler;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Sep 28 2018 12:16:59 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+
+</body>
+</html>

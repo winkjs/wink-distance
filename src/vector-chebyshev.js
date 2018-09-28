@@ -31,9 +31,9 @@
  * Computes the chebyshev or manhattan distance between two vectors of identical
  * length.
  *
- * @name vector.chebyshev
- * @param {number} va — the first vector.
- * @param {number} vb — the second vector.
+ * @method vector.chebyshev
+ * @param {number} va the first vector.
+ * @param {number} vb the second vector.
  * @return {number} chebyshev distance between `va` and `vb`.
  *
  * @example

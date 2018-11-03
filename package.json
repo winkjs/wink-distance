@@ -1,6 +1,6 @@
 {
   "name": "wink-distance",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Distance/Similarity functions for Bag of Words, Strings, Numbers, Dates and Vectors.",
   "keywords": [
     "Distance",

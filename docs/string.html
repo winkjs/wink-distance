@@ -34,6 +34,10 @@
   ((window.gitter = {}).chat = {}).options = {
     room: 'winkjs/Lobby'
   };
+  window.onload = function () {
+      document.querySelector('.gitter-open-chat-button').innerText = 'Need help?'
+      document.querySelector('.gitter-open-chat-button').style.display = 'block';
+  }
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -68,7 +72,13 @@ body {
 .navbar a {
   color: #fff;
   line-height: 60px;
+  margin-left: 0;
+}
+
+.navbar a.navbar-brand {
   margin-left: 20px;
+  display: block;
+  min-width: 40px;
 }
 
 .navbar-right {
@@ -87,10 +97,6 @@ body {
 }
 
 /* Override docdash */
-nav {
-  top: 80px;
-}
-
 #main {
   margin-top: 30px;
 }
@@ -98,6 +104,7 @@ nav {
 /* Gitter */
 .gitter-open-chat-button {
   background: #6C307D;
+  display: none;
 }
 
 .gitter-open-chat-button:hover {
@@ -118,6 +125,16 @@ window.addEventListener('DOMContentLoaded', function () {
       window.scrollTo( 0, (window.pageYOffset || document.documentElement.scrollTop) - 72);
     }, 0)
   }
+
+  document.getElementById('toc-button').addEventListener('click', function () {
+      if (document.getElementById('side-nav').className === '') {
+        document.getElementById('side-nav').className = 'is-open';
+        document.getElementById('toc-button-img').setAttribute('src','./close.svg');
+      } else {
+        document.getElementById('side-nav').className = '';
+        document.getElementById('toc-button-img').setAttribute('src','./menu.svg');
+      }
+  })
 });
 
 window.addEventListener( 'hashchange', function (e) {
@@ -139,38 +156,34 @@ function openMember() {
       <div class="navbar-header">
         <a href="https://winkjs.org/" title="wink" class="navbar-brand">
           <img src="https://winkjs.org/images/logo.svg">
-          wink
+          <span>wink</span>
         </a>
       </div>
-      <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="main-nav">
-        <li><a href="https://winkjs.org/packages.html" class="">Packages</a></li>
-        <li><a href="https://winkjs.org/blog.html" class="">Blog</a></li>
-        <li><a href="http://github.com/winkjs">Github</a></li>
-        <li><a href="https://twitter.com/winkjs_org">Twitter</a></li>
-        <li><a href="https://winkjs.org/about.html" class="">About</a></li>
-      </ul>
+      <div class="sausage-links">
+        <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="main-nav">
+          <li><a href="https://winkjs.org/packages.html" class="">Packages</a></li>
+          <li><a href="https://winkjs.org/showcase.html" class="">Showcase</a></li>
+          <li><a href="https://winkjs.org/blog.html" class="">Blog</a></li>
+          <li><a href="http://github.com/winkjs">Github</a></li>
+          <li><a href="https://winkjs.org/about.html" class="">About</a></li>
+        </div>
+      </nav>
     </div>
 </header>
 
+<div id="toc-button">
+  <img src="./menu.svg" alt="" id="toc-button-img">
+</div>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
 
-<label for="nav-trigger" class="overlay"></label>
+<div class="content-container">
+  <div class="main-container">
+    <div id="main">
+        
+        <h1 class="page-title">string</h1>
+        
 
-<nav >
-    
-    <h2><a href="index.html">Summary</a></h2><h2><a href="https://github.com/winkjs/wink-distance" target="_blank" >Github</a></h2><h3>Namespaces</h3><ul><li><a href="bow.html">bow</a><ul class='methods'><li data-type='method'><a href="bow.html#.cosine">cosine</a></li></ul></li><li><a href="number.html">number</a><ul class='methods'><li data-type='method'><a href="number.html#.hamming">hamming</a></li></ul></li><li><a href="set.html">set</a><ul class='methods'><li data-type='method'><a href="set.html#.jaccard">jaccard</a></li><li data-type='method'><a href="set.html#.tversky">tversky</a></li></ul></li><li><a href="string.html">string</a><ul class='methods'><li data-type='method'><a href="string.html#.hamming">hamming</a></li><li data-type='method'><a href="string.html#.hammingNormalized">hammingNormalized</a></li><li data-type='method'><a href="string.html#.jaro">jaro</a></li><li data-type='method'><a href="string.html#.jaroWinkler">jaroWinkler</a></li><li data-type='method'><a href="string.html#.levenshtein">levenshtein</a></li><li data-type='method'><a href="string.html#.soundex">soundex</a></li></ul></li><li><a href="vector.html">vector</a><ul class='methods'><li data-type='method'><a href="vector.html#.chebyshev">chebyshev</a></li><li data-type='method'><a href="vector.html#.taxicab">taxicab</a></li></ul></li></ul>
-</nav>
-
-<div id="main">
-    
-    <h1 class="page-title">string</h1>
-    
-
-    
+        
 
 
 
@@ -179,9 +192,9 @@ function openMember() {
 
 <header>
     
-        <h2>
+        <!--<h2>
         string
-        </h2>
+        </h2>-->
         
     
 </header>
@@ -194,12 +207,12 @@ function openMember() {
 
 <dl class="details">
 
-    
+    <!--
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="wink-distance.js.html">wink-distance.js</a>, <a href="wink-distance.js.html#line48">line 48</a>
     </li></ul></dd>
-    
+    -->
 
     
 
@@ -249,7 +262,7 @@ function openMember() {
     
 
     
-    
+
     
 
      
@@ -266,7 +279,10 @@ function openMember() {
 
     
 
-    <h4 class="name" id=".hamming"><span class="type-signature">(static) </span>hamming<span class="signature">(str1, str2)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></h4>
+    <h4 class="name" id=".hamming">
+      hamming
+    </h4>
+    <div class="name-signature"><span class="type-signature">(static) </span>hamming<span class="signature">(str1, str2)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></div
 
     
 
@@ -275,12 +291,12 @@ function openMember() {
 
 <dl class="details">
 
-    
+    <!--
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="string-hamming.js.html">string-hamming.js</a>, <a href="string-hamming.js.html#line30">line 30</a>
     </li></ul></dd>
-    
+    -->
 
     
 
@@ -344,7 +360,7 @@ hamming( 'saturn', 'urn' );
 
 
 
-    <h5>Parameters:</h5>
+    <h5>Parameters</h5>
     
 
 <table class="params">
@@ -369,13 +385,14 @@ hamming( 'saturn', 'urn' );
 
         <tr>
             
-                <td class="name"><code>str1</code></td>
+                <td class="name">str1</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -392,13 +409,14 @@ hamming( 'saturn', 'urn' );
 
         <tr>
             
-                <td class="name"><code>str2</code></td>
+                <td class="name">str2</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -430,7 +448,7 @@ hamming( 'saturn', 'urn' );
 
 
 
-<h5>Returns:</h5>
+<h5>Returns</h5>
 
         
 <div class="param-desc">
@@ -448,6 +466,7 @@ hamming( 'saturn', 'urn' );
 <span class="param-type"><a href="number.html">number</a></span>
 
 
+
     </dd>
 </dl>
 
@@ -455,12 +474,17 @@ hamming( 'saturn', 'urn' );
 
 
 
+<hr>
+
         
             
 
     
 
-    <h4 class="name" id=".hammingNormalized"><span class="type-signature">(static) </span>hammingNormalized<span class="signature">(str1, str2)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></h4>
+    <h4 class="name" id=".hammingNormalized">
+      hammingNormalized
+    </h4>
+    <div class="name-signature"><span class="type-signature">(static) </span>hammingNormalized<span class="signature">(str1, str2)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></div
 
     
 
@@ -469,12 +493,12 @@ hamming( 'saturn', 'urn' );
 
 <dl class="details">
 
-    
+    <!--
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="string-hamming-normalized.js.html">string-hamming-normalized.js</a>, <a href="string-hamming-normalized.js.html#line30">line 30</a>
     </li></ul></dd>
-    
+    -->
 
     
 
@@ -538,7 +562,7 @@ hammingNormalized( 'saturn', 'urn' );
 
 
 
-    <h5>Parameters:</h5>
+    <h5>Parameters</h5>
     
 
 <table class="params">
@@ -563,13 +587,14 @@ hammingNormalized( 'saturn', 'urn' );
 
         <tr>
             
-                <td class="name"><code>str1</code></td>
+                <td class="name">str1</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -586,13 +611,14 @@ hammingNormalized( 'saturn', 'urn' );
 
         <tr>
             
-                <td class="name"><code>str2</code></td>
+                <td class="name">str2</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -624,7 +650,7 @@ hammingNormalized( 'saturn', 'urn' );
 
 
 
-<h5>Returns:</h5>
+<h5>Returns</h5>
 
         
 <div class="param-desc">
@@ -642,6 +668,7 @@ hammingNormalized( 'saturn', 'urn' );
 <span class="param-type"><a href="number.html">number</a></span>
 
 
+
     </dd>
 </dl>
 
@@ -649,12 +676,17 @@ hammingNormalized( 'saturn', 'urn' );
 
 
 
+<hr>
+
         
             
 
     
 
-    <h4 class="name" id=".jaro"><span class="type-signature">(static) </span>jaro<span class="signature">(str1, str2)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></h4>
+    <h4 class="name" id=".jaro">
+      jaro
+    </h4>
+    <div class="name-signature"><span class="type-signature">(static) </span>jaro<span class="signature">(str1, str2)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></div
 
     
 
@@ -663,12 +695,12 @@ hammingNormalized( 'saturn', 'urn' );
 
 <dl class="details">
 
-    
+    <!--
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="string-jaro.js.html">string-jaro.js</a>, <a href="string-jaro.js.html#line31">line 31</a>
     </li></ul></dd>
-    
+    -->
 
     
 
@@ -730,7 +762,7 @@ jaro( 'sat', 'urn' );
 
 
 
-    <h5>Parameters:</h5>
+    <h5>Parameters</h5>
     
 
 <table class="params">
@@ -755,13 +787,14 @@ jaro( 'sat', 'urn' );
 
         <tr>
             
-                <td class="name"><code>str1</code></td>
+                <td class="name">str1</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -778,13 +811,14 @@ jaro( 'sat', 'urn' );
 
         <tr>
             
-                <td class="name"><code>str2</code></td>
+                <td class="name">str2</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -816,7 +850,7 @@ jaro( 'sat', 'urn' );
 
 
 
-<h5>Returns:</h5>
+<h5>Returns</h5>
 
         
 <div class="param-desc">
@@ -834,6 +868,7 @@ jaro( 'sat', 'urn' );
 <span class="param-type"><a href="number.html">number</a></span>
 
 
+
     </dd>
 </dl>
 
@@ -841,12 +876,17 @@ jaro( 'sat', 'urn' );
 
 
 
+<hr>
+
         
             
 
     
 
-    <h4 class="name" id=".jaroWinkler"><span class="type-signature">(static) </span>jaroWinkler<span class="signature">(str1, str2, boostThreshold<span class="signature-attributes">opt</span>, scalingFactor<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></h4>
+    <h4 class="name" id=".jaroWinkler">
+      jaroWinkler
+    </h4>
+    <div class="name-signature"><span class="type-signature">(static) </span>jaroWinkler<span class="signature">(str1, str2, boostThreshold<span class="signature-attributes">opt</span>, scalingFactor<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></div
 
     
 
@@ -855,12 +895,12 @@ jaro( 'sat', 'urn' );
 
 <dl class="details">
 
-    
+    <!--
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="string-jaro-winkler.js.html">string-jaro-winkler.js</a>, <a href="string-jaro-winkler.js.html#line31">line 31</a>
     </li></ul></dd>
-    
+    -->
 
     
 
@@ -922,7 +962,7 @@ jaroWinkler( 'duane', 'dwayne' );
 
 
 
-    <h5>Parameters:</h5>
+    <h5>Parameters</h5>
     
 
 <table class="params">
@@ -951,13 +991,14 @@ jaroWinkler( 'duane', 'dwayne' );
 
         <tr>
             
-                <td class="name"><code>str1</code></td>
+                <td class="name">str1</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -986,13 +1027,14 @@ jaroWinkler( 'duane', 'dwayne' );
 
         <tr>
             
-                <td class="name"><code>str2</code></td>
+                <td class="name">str2</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -1021,13 +1063,14 @@ jaroWinkler( 'duane', 'dwayne' );
 
         <tr>
             
-                <td class="name"><code>boostThreshold</code></td>
+                <td class="name">boostThreshold</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="number.html">number</a></span>
+
 
 
             
@@ -1048,7 +1091,7 @@ jaroWinkler( 'duane', 'dwayne' );
             
                 <td class="default">
                 
-                    <code>0.3</code>
+                    0.3
                 
                 </td>
             
@@ -1062,13 +1105,14 @@ equal to this value. Any value &gt; 1, is capped at 1 automatically.</p></td>
 
         <tr>
             
-                <td class="name"><code>scalingFactor</code></td>
+                <td class="name">scalingFactor</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="number.html">number</a></span>
+
 
 
             
@@ -1089,7 +1133,7 @@ equal to this value. Any value &gt; 1, is capped at 1 automatically.</p></td>
             
                 <td class="default">
                 
-                    <code>0.1</code>
+                    0.1
                 
                 </td>
             
@@ -1119,7 +1163,7 @@ Any value &gt; 0.25, is capped at 0.25 automatically.</p></td>
 
 
 
-<h5>Returns:</h5>
+<h5>Returns</h5>
 
         
 <div class="param-desc">
@@ -1137,6 +1181,7 @@ Any value &gt; 0.25, is capped at 0.25 automatically.</p></td>
 <span class="param-type"><a href="number.html">number</a></span>
 
 
+
     </dd>
 </dl>
 
@@ -1144,12 +1189,17 @@ Any value &gt; 0.25, is capped at 0.25 automatically.</p></td>
 
 
 
+<hr>
+
         
             
 
     
 
-    <h4 class="name" id=".levenshtein"><span class="type-signature">(static) </span>levenshtein<span class="signature">(str1, str2)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></h4>
+    <h4 class="name" id=".levenshtein">
+      levenshtein
+    </h4>
+    <div class="name-signature"><span class="type-signature">(static) </span>levenshtein<span class="signature">(str1, str2)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></div
 
     
 
@@ -1158,12 +1208,12 @@ Any value &gt; 0.25, is capped at 0.25 automatically.</p></td>
 
 <dl class="details">
 
-    
+    <!--
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="string-levenshtein.js.html">string-levenshtein.js</a>, <a href="string-levenshtein.js.html#line36">line 36</a>
     </li></ul></dd>
-    
+    -->
 
     
 
@@ -1224,7 +1274,7 @@ levenshtein( 'distance', 'difference' );
 
 
 
-    <h5>Parameters:</h5>
+    <h5>Parameters</h5>
     
 
 <table class="params">
@@ -1249,13 +1299,14 @@ levenshtein( 'distance', 'difference' );
 
         <tr>
             
-                <td class="name"><code>str1</code></td>
+                <td class="name">str1</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -1272,13 +1323,14 @@ levenshtein( 'distance', 'difference' );
 
         <tr>
             
-                <td class="name"><code>str2</code></td>
+                <td class="name">str2</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -1310,7 +1362,7 @@ levenshtein( 'distance', 'difference' );
 
 
 
-<h5>Returns:</h5>
+<h5>Returns</h5>
 
         
 <div class="param-desc">
@@ -1328,6 +1380,7 @@ levenshtein( 'distance', 'difference' );
 <span class="param-type"><a href="number.html">number</a></span>
 
 
+
     </dd>
 </dl>
 
@@ -1335,12 +1388,17 @@ levenshtein( 'distance', 'difference' );
 
 
 
+<hr>
+
         
             
 
     
 
-    <h4 class="name" id=".soundex"><span class="type-signature">(static) </span>soundex<span class="signature">(str1, str2)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></h4>
+    <h4 class="name" id=".soundex">
+      soundex
+    </h4>
+    <div class="name-signature"><span class="type-signature">(static) </span>soundex<span class="signature">(str1, str2)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></div
 
     
 
@@ -1349,12 +1407,12 @@ levenshtein( 'distance', 'difference' );
 
 <dl class="details">
 
-    
+    <!--
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="string-soundex.js.html">string-soundex.js</a>, <a href="string-soundex.js.html#line31">line 31</a>
     </li></ul></dd>
-    
+    -->
 
     
 
@@ -1416,7 +1474,7 @@ soundex( 'sat', 'urn' );
 
 
 
-    <h5>Parameters:</h5>
+    <h5>Parameters</h5>
     
 
 <table class="params">
@@ -1441,13 +1499,14 @@ soundex( 'sat', 'urn' );
 
         <tr>
             
-                <td class="name"><code>str1</code></td>
+                <td class="name">str1</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -1464,13 +1523,14 @@ soundex( 'sat', 'urn' );
 
         <tr>
             
-                <td class="name"><code>str2</code></td>
+                <td class="name">str2</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="string.html">string</a></span>
+
 
 
             
@@ -1502,7 +1562,7 @@ soundex( 'sat', 'urn' );
 
 
 
-<h5>Returns:</h5>
+<h5>Returns</h5>
 
         
 <div class="param-desc">
@@ -1520,12 +1580,15 @@ soundex( 'sat', 'urn' );
 <span class="param-type"><a href="number.html">number</a></span>
 
 
+
     </dd>
 </dl>
 
     
 
 
+
+<hr>
 
         
     
@@ -1541,18 +1604,40 @@ soundex( 'sat', 'urn' );
 
 
 
-    
+        
+    </div>
+  </div>
+
+  <nav  id="side-nav">
+      
+      <h2><a href="index.html">Summary</a></h2><h2><a href="https://github.com/winkjs/wink-distance" target="_blank" >Github</a></h2><h3>Namespaces</h3><ul><li><a href="bow.html">bow</a><ul class='methods'><li data-type='method'><a href="bow.html#.cosine">cosine</a></li></ul></li><li><a href="number.html">number</a><ul class='methods'><li data-type='method'><a href="number.html#.hamming">hamming</a></li></ul></li><li><a href="set.html">set</a><ul class='methods'><li data-type='method'><a href="set.html#.jaccard">jaccard</a></li><li data-type='method'><a href="set.html#.tversky">tversky</a></li></ul></li><li><a href="string.html">string</a><ul class='methods'><li data-type='method'><a href="string.html#.hamming">hamming</a></li><li data-type='method'><a href="string.html#.hammingNormalized">hammingNormalized</a></li><li data-type='method'><a href="string.html#.jaro">jaro</a></li><li data-type='method'><a href="string.html#.jaroWinkler">jaroWinkler</a></li><li data-type='method'><a href="string.html#.levenshtein">levenshtein</a></li><li data-type='method'><a href="string.html#.soundex">soundex</a></li></ul></li><li><a href="vector.html">vector</a><ul class='methods'><li data-type='method'><a href="vector.html#.chebyshev">chebyshev</a></li><li data-type='method'><a href="vector.html#.taxicab">taxicab</a></li></ul></li></ul>
+  </nav>
 </div>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Mar 21 2019 09:31:00 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Nov 23 2019 15:10:30 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
 <script src="scripts/linenumber.js"></script>
 
 
+
+<script src="https://embed.runkit.com"></script>
+<script type="text/javascript">
+  var els = document.getElementsByClassName("runkit");
+
+  Array.prototype.forEach.call(els, function(el) {
+    // Do stuff here
+    var source = el.innerHTML;
+    el.innerHTML = '';
+    var n = RunKit.createNotebook( {
+      element: el,
+      source: source
+    } );
+  });
+</script>
 </body>
 </html>

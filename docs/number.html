@@ -34,6 +34,10 @@
   ((window.gitter = {}).chat = {}).options = {
     room: 'winkjs/Lobby'
   };
+  window.onload = function () {
+      document.querySelector('.gitter-open-chat-button').innerText = 'Need help?'
+      document.querySelector('.gitter-open-chat-button').style.display = 'block';
+  }
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -68,7 +72,13 @@ body {
 .navbar a {
   color: #fff;
   line-height: 60px;
+  margin-left: 0;
+}
+
+.navbar a.navbar-brand {
   margin-left: 20px;
+  display: block;
+  min-width: 40px;
 }
 
 .navbar-right {
@@ -87,10 +97,6 @@ body {
 }
 
 /* Override docdash */
-nav {
-  top: 80px;
-}
-
 #main {
   margin-top: 30px;
 }
@@ -98,6 +104,7 @@ nav {
 /* Gitter */
 .gitter-open-chat-button {
   background: #6C307D;
+  display: none;
 }
 
 .gitter-open-chat-button:hover {
@@ -118,6 +125,16 @@ window.addEventListener('DOMContentLoaded', function () {
       window.scrollTo( 0, (window.pageYOffset || document.documentElement.scrollTop) - 72);
     }, 0)
   }
+
+  document.getElementById('toc-button').addEventListener('click', function () {
+      if (document.getElementById('side-nav').className === '') {
+        document.getElementById('side-nav').className = 'is-open';
+        document.getElementById('toc-button-img').setAttribute('src','./close.svg');
+      } else {
+        document.getElementById('side-nav').className = '';
+        document.getElementById('toc-button-img').setAttribute('src','./menu.svg');
+      }
+  })
 });
 
 window.addEventListener( 'hashchange', function (e) {
@@ -139,38 +156,34 @@ function openMember() {
       <div class="navbar-header">
         <a href="https://winkjs.org/" title="wink" class="navbar-brand">
           <img src="https://winkjs.org/images/logo.svg">
-          wink
+          <span>wink</span>
         </a>
       </div>
-      <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="main-nav">
-        <li><a href="https://winkjs.org/packages.html" class="">Packages</a></li>
-        <li><a href="https://winkjs.org/blog.html" class="">Blog</a></li>
-        <li><a href="http://github.com/winkjs">Github</a></li>
-        <li><a href="https://twitter.com/winkjs_org">Twitter</a></li>
-        <li><a href="https://winkjs.org/about.html" class="">About</a></li>
-      </ul>
+      <div class="sausage-links">
+        <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="main-nav">
+          <li><a href="https://winkjs.org/packages.html" class="">Packages</a></li>
+          <li><a href="https://winkjs.org/showcase.html" class="">Showcase</a></li>
+          <li><a href="https://winkjs.org/blog.html" class="">Blog</a></li>
+          <li><a href="http://github.com/winkjs">Github</a></li>
+          <li><a href="https://winkjs.org/about.html" class="">About</a></li>
+        </div>
+      </nav>
     </div>
 </header>
 
+<div id="toc-button">
+  <img src="./menu.svg" alt="" id="toc-button-img">
+</div>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger" class="navicon-button x">
-  <div class="navicon"></div>
-</label>
 
-<label for="nav-trigger" class="overlay"></label>
+<div class="content-container">
+  <div class="main-container">
+    <div id="main">
+        
+        <h1 class="page-title">number</h1>
+        
 
-<nav >
-    
-    <h2><a href="index.html">Summary</a></h2><h2><a href="https://github.com/winkjs/wink-distance" target="_blank" >Github</a></h2><h3>Namespaces</h3><ul><li><a href="bow.html">bow</a><ul class='methods'><li data-type='method'><a href="bow.html#.cosine">cosine</a></li></ul></li><li><a href="number.html">number</a><ul class='methods'><li data-type='method'><a href="number.html#.hamming">hamming</a></li></ul></li><li><a href="set.html">set</a><ul class='methods'><li data-type='method'><a href="set.html#.jaccard">jaccard</a></li><li data-type='method'><a href="set.html#.tversky">tversky</a></li></ul></li><li><a href="string.html">string</a><ul class='methods'><li data-type='method'><a href="string.html#.hamming">hamming</a></li><li data-type='method'><a href="string.html#.hammingNormalized">hammingNormalized</a></li><li data-type='method'><a href="string.html#.jaro">jaro</a></li><li data-type='method'><a href="string.html#.jaroWinkler">jaroWinkler</a></li><li data-type='method'><a href="string.html#.levenshtein">levenshtein</a></li><li data-type='method'><a href="string.html#.soundex">soundex</a></li></ul></li><li><a href="vector.html">vector</a><ul class='methods'><li data-type='method'><a href="vector.html#.chebyshev">chebyshev</a></li><li data-type='method'><a href="vector.html#.taxicab">taxicab</a></li></ul></li></ul>
-</nav>
-
-<div id="main">
-    
-    <h1 class="page-title">number</h1>
-    
-
-    
+        
 
 
 
@@ -179,9 +192,9 @@ function openMember() {
 
 <header>
     
-        <h2>
+        <!--<h2>
         number
-        </h2>
+        </h2>-->
         
     
 </header>
@@ -194,12 +207,12 @@ function openMember() {
 
 <dl class="details">
 
-    
+    <!--
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="wink-distance.js.html">wink-distance.js</a>, <a href="wink-distance.js.html#line35">line 35</a>
     </li></ul></dd>
-    
+    -->
 
     
 
@@ -249,7 +262,7 @@ function openMember() {
     
 
     
-    
+
     
 
      
@@ -266,7 +279,10 @@ function openMember() {
 
     
 
-    <h4 class="name" id=".hamming"><span class="type-signature">(static) </span>hamming<span class="signature">(na, nb)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></h4>
+    <h4 class="name" id=".hamming">
+      hamming
+    </h4>
+    <div class="name-signature"><span class="type-signature">(static) </span>hamming<span class="signature">(na, nb)</span><span class="type-signature"> &rarr; {<a href="number.html">number</a>}</span></div
 
     
 
@@ -275,12 +291,12 @@ function openMember() {
 
 <dl class="details">
 
-    
+    <!--
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="number-hamming.js.html">number-hamming.js</a>, <a href="number-hamming.js.html#line32">line 32</a>
     </li></ul></dd>
-    
+    -->
 
     
 
@@ -342,7 +358,7 @@ hamming( 9, 15 );
 
 
 
-    <h5>Parameters:</h5>
+    <h5>Parameters</h5>
     
 
 <table class="params">
@@ -367,13 +383,14 @@ hamming( 9, 15 );
 
         <tr>
             
-                <td class="name"><code>na</code></td>
+                <td class="name">na</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="number.html">number</a></span>
+
 
 
             
@@ -390,13 +407,14 @@ hamming( 9, 15 );
 
         <tr>
             
-                <td class="name"><code>nb</code></td>
+                <td class="name">nb</td>
             
 
             <td class="type">
             
                 
 <span class="param-type"><a href="number.html">number</a></span>
+
 
 
             
@@ -428,7 +446,7 @@ hamming( 9, 15 );
 
 
 
-<h5>Returns:</h5>
+<h5>Returns</h5>
 
         
 <div class="param-desc">
@@ -446,12 +464,15 @@ hamming( 9, 15 );
 <span class="param-type"><a href="number.html">number</a></span>
 
 
+
     </dd>
 </dl>
 
     
 
 
+
+<hr>
 
         
     
@@ -467,18 +488,40 @@ hamming( 9, 15 );
 
 
 
-    
+        
+    </div>
+  </div>
+
+  <nav  id="side-nav">
+      
+      <h2><a href="index.html">Summary</a></h2><h2><a href="https://github.com/winkjs/wink-distance" target="_blank" >Github</a></h2><h3>Namespaces</h3><ul><li><a href="bow.html">bow</a><ul class='methods'><li data-type='method'><a href="bow.html#.cosine">cosine</a></li></ul></li><li><a href="number.html">number</a><ul class='methods'><li data-type='method'><a href="number.html#.hamming">hamming</a></li></ul></li><li><a href="set.html">set</a><ul class='methods'><li data-type='method'><a href="set.html#.jaccard">jaccard</a></li><li data-type='method'><a href="set.html#.tversky">tversky</a></li></ul></li><li><a href="string.html">string</a><ul class='methods'><li data-type='method'><a href="string.html#.hamming">hamming</a></li><li data-type='method'><a href="string.html#.hammingNormalized">hammingNormalized</a></li><li data-type='method'><a href="string.html#.jaro">jaro</a></li><li data-type='method'><a href="string.html#.jaroWinkler">jaroWinkler</a></li><li data-type='method'><a href="string.html#.levenshtein">levenshtein</a></li><li data-type='method'><a href="string.html#.soundex">soundex</a></li></ul></li><li><a href="vector.html">vector</a><ul class='methods'><li data-type='method'><a href="vector.html#.chebyshev">chebyshev</a></li><li data-type='method'><a href="vector.html#.taxicab">taxicab</a></li></ul></li></ul>
+  </nav>
 </div>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Mar 21 2019 09:31:00 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Nov 23 2019 15:10:30 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
 <script src="scripts/linenumber.js"></script>
 
 
+
+<script src="https://embed.runkit.com"></script>
+<script type="text/javascript">
+  var els = document.getElementsByClassName("runkit");
+
+  Array.prototype.forEach.call(els, function(el) {
+    // Do stuff here
+    var source = el.innerHTML;
+    el.innerHTML = '';
+    var n = RunKit.createNotebook( {
+      element: el,
+      source: source
+    } );
+  });
+</script>
 </body>
 </html>

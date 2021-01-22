@@ -45,7 +45,7 @@ var ccc = [];
  * @return {number} levenshtein distance between `str1` and `str2`.
  * @example
  * levenshtein( 'example', 'sample' );
- * // ->  3
+ * // ->  2
  * levenshtein( 'distance', 'difference' );
  * // -> 5
  */

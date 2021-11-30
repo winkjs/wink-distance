@@ -23,7 +23,7 @@ Use [npm](https://www.npmjs.com/package/wink-distance) to install:
 
 
 ### Documentation
-Check out the [distance/similarity API documentation](http://wink.org.in/wink-distance/) to learn more.
+Check out the [distance/similarity API documentation](https://winkjs.org/wink-distance) to learn more.
 
 ### Need Help?
 

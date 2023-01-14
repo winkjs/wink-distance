@@ -2,7 +2,7 @@
 //     Distance functions for Bag of Words, Strings,
 //     Vectors and more.
 //
-//     Copyright (C) 2017-18  GRAYPE Systems Private Limited
+//     Copyright (C) GRAYPE Systems Private Limited
 //
 //     This file is part of “wink-distance”.
 //

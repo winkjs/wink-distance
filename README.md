@@ -2,7 +2,7 @@
 
 Distance/Similarity functions for Bag of Words, Strings, Vectors and more.
 
-### [![Build Status](https://api.travis-ci.org/winkjs/wink-distance.svg?branch=master)](https://travis-ci.org/winkjs/wink-distance) [![Coverage Status](https://coveralls.io/repos/github/winkjs/wink-distance/badge.svg?branch=master)](https://coveralls.io/github/winkjs/wink-distance?branch=master) [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/winkjs/Lobby)
+### [![Build Status](https://api.travis-ci.com/winkjs/wink-distance.svg?branch=master)](https://app.travis-ci.com/github/winkjs/wink-distance) [![Coverage Status](https://coveralls.io/repos/github/winkjs/wink-distance/badge.svg?branch=master)](https://coveralls.io/github/winkjs/wink-distance?branch=master) [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/winkjs/Lobby)
 
 [<img align="right" src="https://decisively.github.io/wink-logos/logo-title.png" width="100px" >](http://wink.org.in/)
 
@@ -13,7 +13,7 @@ Compute distances or similarities needed for NLP, de-duplication and clustering 
 1. Jaro, Jaro-Winkler, and Levenshtien for string,
 1. Chebyshev and Taxicab for vectors.
 
-> [WinkNLP](https://github.com/winkjs/wink-nlp) works with `wink-distance`.
+> Combine `wink-distance` with [WinkNLP](https://github.com/winkjs/wink-nlp) to build awesome NLP apps.
 
 ### Installation
 

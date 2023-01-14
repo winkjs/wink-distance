@@ -18,7 +18,8 @@
     "Soundex",
     "Tversky",
     "Taxicab",
-    "wink"
+    "wink",
+    "winkJS"
   ],
   "main": "src/wink-distance.js",
   "scripts": {
